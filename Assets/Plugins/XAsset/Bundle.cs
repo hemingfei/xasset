@@ -82,7 +82,7 @@ namespace Plugins.XAsset
 
 		public override float progress
 		{
-			get { return _request.progress; }
+			get { return _request != null ? _request.progress : 0f; }
 		}
 
 		internal override void Load()
@@ -92,14 +92,14 @@ namespace Plugins.XAsset
 			{
 				error = name + " LoadFromFile failed.";
 				return;
-			} 
+			}
 			loadState = LoadState.LoadAssetBundle;
 		}
 
 		internal override void Unload()
 		{
 			if (_request != null)
-			{ 
+			{
 				_request = null;
 			}
 			loadState = LoadState.Unload;
@@ -121,7 +121,7 @@ namespace Plugins.XAsset
 
 		public override string error
 		{
-			get { return _request.error; }
+			get { return _request != null ? _request.error : null; }
 		}
 
 		public override bool isDone
@@ -131,13 +131,20 @@ namespace Plugins.XAsset
 				if (loadState == LoadState.Init)
 					return false;
 
-				if (_request == null)
+				if (_request == null || loadState == LoadState.Loaded)
 					return true;
 #if UNITY_2018_3_OR_NEWER
-                if (_request.isDone) assetBundle = DownloadHandlerAssetBundle.GetContent(_request);
-#else
 				if (_request.isDone)
-					assetBundle = _request.assetBundle;
+				{
+					assetBundle = DownloadHandlerAssetBundle.GetContent(_request);
+					loadState = LoadState.Loaded;
+				}
+#else
+                if (_request.isDone)
+                {
+                    assetBundle = _request.assetBundle;
+                    loadState = LoadState.Loaded;
+                }
 #endif
 
 				return _request.isDone;
@@ -147,19 +154,20 @@ namespace Plugins.XAsset
 		public override float progress
 		{
 #if UNITY_2018_3_OR_NEWER
-            get { return _request.downloadProgress; }
+            get { return _request != null ? _request.downloadProgress : 0f; }
 #else
-			get { return _request.progress; }
+			get { return _request != null ? _request.progress : 0f; }
 #endif
 		}
 
 		internal override void Load()
 		{
 #if UNITY_2018_3_OR_NEWER
-            _request = cache ? UnityWebRequestAssetBundle.GetAssetBundle(name,hash) : UnityWebRequestAssetBundle.GetAssetBundle(name);
+			_request = cache ? UnityWebRequestAssetBundle.GetAssetBundle(name,hash) : UnityWebRequestAssetBundle.GetAssetBundle(name);
+			_request.SendWebRequest();
 #else
-			_request = cache ? WWW.LoadFromCacheOrDownload(name, hash) : new WWW(name);
-#endif 
+            _request = cache ? WWW.LoadFromCacheOrDownload(name, hash) : new WWW(name);
+#endif
 			loadState = LoadState.LoadAssetBundle;
 
 		}

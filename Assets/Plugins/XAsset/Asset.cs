@@ -381,6 +381,9 @@ namespace Plugins.XAsset
         {
             get
             {
+                if (bundle == null)
+                    return _request == null ? 0 : _request.progress;
+
                 var bundleProgress = bundle.progress;
                 if (bundle.dependencies.Count <= 0)
                     return bundleProgress * 0.3f + (_request != null ? _request.progress * 0.7f : 0);
@@ -399,22 +402,22 @@ namespace Plugins.XAsset
         {
             get
             {
-                if (bundle == null || bundle.error != null)
-                    return true;
-
-                for (int i = 0, max = bundle.dependencies.Count; i < max; i++)
-                {
-                    var item = bundle.dependencies[i];
-                    if (item.error != null)
-                        return true;
-                }
-
                 switch (loadState)
                 {
                     case LoadState.Loaded:
                         return true;
                     case LoadState.LoadAssetBundle:
                         {
+                            if (bundle == null || bundle.error != null)
+                                return true;
+
+                            for (int i = 0, max = bundle.dependencies.Count; i < max; i++)
+                            {
+                                var item = bundle.dependencies[i];
+                                if (item.error != null)
+                                    return true;
+                            }
+
                             if (!bundle.isDone)
                                 return false;
 
@@ -481,56 +484,62 @@ namespace Plugins.XAsset
             {
                 if (loadState == LoadState.Init)
                     return false;
-                if (_www == null)
+                if (loadState == LoadState.Loaded)
                     return true;
 
-                if (!_www.isDone)
-                    return _www.isDone;
-                if (asset != null)
-                    return _www.isDone;
+                if (loadState == LoadState.LoadAsset)
+                {
+                    if (_www == null || !string.IsNullOrEmpty(_www.error))
+                        return true;
 
+                    if (_www.isDone)
+                    {
 #if UNITY_2018_3_OR_NEWER
-                if (assetType != typeof(Texture2D))
-                {
-                    if (assetType != typeof(TextAsset))
-                    {
-                        if (assetType != typeof(AudioClip))
-                            bytes = _www.downloadHandler.data;
+                        if (assetType != typeof(Texture2D))
+                        {
+                            if (assetType != typeof(TextAsset))
+                            {
+                                if (assetType != typeof(AudioClip))
+                                    bytes = _www.downloadHandler.data;
+                                else
+                                    asset = DownloadHandlerAudioClip.GetContent(_www);
+                            }
+                            else
+                            {
+                                text = _www.downloadHandler.text;
+                            }
+                        }
                         else
-                            asset = DownloadHandlerAudioClip.GetContent(_www);
-                    }
-                    else
-                    {
-                        text = _www.downloadHandler.text;
-                    }
-                }
-                else
-                {
-                    asset = DownloadHandlerTexture.GetContent(_www);
-                }
+                        {
+                            asset = DownloadHandlerTexture.GetContent(_www);
+                        }
 #else
-                if (assetType != typeof(Texture2D))
-                {
-                    if (assetType != typeof(TextAsset))
-                    {
-                        if (assetType != typeof(AudioClip))
-                            bytes = _www.bytes;
+                        if (assetType != typeof(Texture2D))
+                        {
+                            if (assetType != typeof(TextAsset))
+                            {
+                                if (assetType != typeof(AudioClip))
+                                    bytes = _www.bytes;
+                                else
+                                    asset = _www.GetAudioClip();
+                            }
+                            else
+                            {
+                                text = _www.text;
+                            }
+                        }
                         else
-                            asset = _www.GetAudioClip();
+                        {
+                            asset = _www.texture;
+                        } 
+#endif
+                        loadState = LoadState.Loaded;
+                        return true;
                     }
-                    else
-                    {
-                        text = _www.text;
-                    }
-                }
-                else
-                {
-                    asset = _www.texture;
+                    return false;
                 }
 
-                
-#endif
-                return _www.isDone;
+                return true;
             }
         }
 
@@ -556,9 +565,9 @@ namespace Plugins.XAsset
                 _www = UnityWebRequestMultimedia.GetAudioClip(name, AudioType.WAV);
             }
             else if (assetType == typeof(Texture2D))
-            { 
+            {
                 _www = UnityWebRequestTexture.GetTexture(name);
-            } 
+            }
             else
             {
                 _www = new UnityWebRequest(name);
@@ -580,6 +589,9 @@ namespace Plugins.XAsset
             }
             if (_www != null)
                 _www.Dispose();
+
+            bytes = null;
+            text = null;
         }
     }
 }
