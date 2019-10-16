@@ -86,7 +86,7 @@ namespace Plugins.XAsset.Editor
         }
 
         [MenuItem(KMarkAssetsWithDir)]
-        private static void MarkAssetsWithDir()
+        public static void MarkAssetsWithDir()
         {
             var settings = BuildScript.GetSettings();
             assetRootPath = settings.assetRootPath; 
@@ -109,7 +109,7 @@ namespace Plugins.XAsset.Editor
         }
 
         [MenuItem(KMarkAssetsWithFile)]
-        private static void MarkAssetsWithFile()
+        public static void MarkAssetsWithFile()
         {
             var settings = BuildScript.GetSettings();
             assetRootPath = settings.assetRootPath; 
@@ -141,7 +141,7 @@ namespace Plugins.XAsset.Editor
         }
 
         [MenuItem(KMarkAssetsWithName)]
-        private static void MarkAssetsWithName()
+        public static void MarkAssetsWithName()
         {
             var settings = BuildScript.GetSettings();
             assetRootPath = settings.assetRootPath; 
@@ -164,13 +164,13 @@ namespace Plugins.XAsset.Editor
         }
 
         [MenuItem(KBuildManifest)]
-        private static void BuildManifest()
+        public static void BuildManifest()
         {
             BuildScript.BuildManifest();
         }
 
         [MenuItem(KBuildAssetBundles)]
-        private static void BuildAssetBundles()
+        public static void BuildAssetBundles()
         {
             BuildScript.BuildManifest();
             BuildScript.BuildAssetBundles();

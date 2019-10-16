@@ -24,6 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using Hegametech.Framework;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -33,7 +34,8 @@ using Debug = UnityEngine.Debug;
 
 namespace Plugins.XAsset
 {
-    public class Assets : MonoBehaviour
+    [MonoSingletonAttribute("[HE GAME TECH]/Assets")]
+    public class Assets : TMonoSingleton<Assets>
     {
         private static string[] _bundles = new string[0];
         private static Dictionary<string, int> _bundleAssets = new Dictionary<string, int>();
@@ -56,8 +58,9 @@ namespace Plugins.XAsset
             var instance = FindObjectOfType<Assets>();
             if (instance == null)
             {
-                instance = new GameObject("Assets").AddComponent<Assets>();
-                DontDestroyOnLoad(instance.gameObject);
+                instance = Instance;
+                //instance = new GameObject("Assets").AddComponent<Assets>();
+                //DontDestroyOnLoad(instance.gameObject);
             }
 
             if (string.IsNullOrEmpty(Utility.dataPath)) Utility.dataPath = Application.streamingAssetsPath;
