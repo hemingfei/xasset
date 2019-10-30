@@ -276,6 +276,36 @@ namespace Plugins.XAsset.Editor
                     s.Close();
                 }
 
+                // 偏移加密
+#if EncryptBundleOffset
+                foreach (var item in updates)
+                {
+                    EncryptBundleOffset(item);
+                }
+                EncryptBundleOffset(GetPlatformForAssetBundles(EditorUserBuildSettings.activeBuildTarget));
+#endif
+
+                // 写入版本号内容
+                {
+                    using (var appconfigS = new StreamWriter(File.Open(outputPath + "/appconfig.txt", FileMode.OpenOrCreate)))
+                    {
+                        string folderPath = Hegametech.Framework.AppConfig.APP_CONFIG_DIR_PATH;
+                        string appDataPath = folderPath + Hegametech.Framework.AppConfig.APP_CONFIG_FILE + ".asset";
+                        var data = AssetDatabase.LoadAssetAtPath<Hegametech.Framework.AppConfig>(appDataPath);
+                        if (data == null)
+                        {
+                            Debug.LogError("no appconfig found:" + appDataPath);
+                        }
+                        data.ResVersionAutoUpdate();
+                        EditorUtility.SetDirty(data);
+                        string appresVersion = data.AppVersion + "|" + data.ResVersion;
+                        appconfigS.WriteLine(appresVersion); // 这里是版本
+                        appconfigS.Flush();
+                        appconfigS.Close();
+                        AssetDatabase.SaveAssets();
+                    }
+                }
+
                 SaveVersions(versionsTxt, buildVersions);
             }
             else
@@ -283,7 +313,7 @@ namespace Plugins.XAsset.Editor
                 Debug.Log("nothing to update.");
             }
 
-            string[] ignoredFiles = { GetPlatformName(), "versions.txt", "updates.txt", "manifest" };
+            string[] ignoredFiles = { GetPlatformName(), "versions.txt", "updates.txt", "manifest", "appconfig.txt" };
 
             var files = Directory.GetFiles(outputPath, "*", SearchOption.AllDirectories);
 
@@ -303,6 +333,53 @@ namespace Plugins.XAsset.Editor
 
             deletes.Clear();
         }
+
+        #region AB包 偏移加密
+#if EncryptBundleOffset
+        /// <summary>
+        /// AB包偏移加密
+        /// </summary>
+        /// <param name="bundleName"></param>
+        private static void EncryptBundleOffset(string bundleName)
+        {
+            var outputPath = CreateAssetBundleDirectory();
+            string filepath = outputPath + "/" + bundleName;
+            //Debug.Log($"偏移加密 bundleName  {bundleName}  ， filepath {filepath} ， Path.GetFileNameWithoutExtension(bundleName)  {Path.GetFileNameWithoutExtension(bundleName)}");
+            int offset = 327 + System.IO.Path.GetFileNameWithoutExtension(bundleName).Length;
+            byte[] filedata = File.ReadAllBytes(filepath);
+            int filelen = (offset + filedata.Length);
+            byte[] buffer = new byte[filelen];
+            CopyHead(filedata, buffer, (uint)offset);
+            CopyTo(filedata, buffer, (uint)offset);
+            FileStream fs = File.OpenWrite(filepath);
+            fs.Write(buffer, 0, filelen);
+            fs.Close();
+        }
+
+        static void CopyHead(byte[] source, byte[] dest, uint len)
+        {
+            for (int slen = 0; slen < source.Length; slen++)
+            {
+                if (slen < len)
+                {
+                    dest[slen] = source[slen];
+                    continue;
+                }
+                break;
+            }
+        }
+
+        private static void CopyTo(byte[] source, byte[] dest, uint o)
+        {
+            uint last = (uint)source.Length;
+            for (uint i = 0; i < last; i++)
+            {
+                uint ii = i + o;
+                dest[ii] = source[i];
+            }
+        }
+#endif
+        #endregion
 
         private static string GetBuildTargetName(BuildTarget target)
         {

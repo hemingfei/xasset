@@ -42,8 +42,12 @@ namespace Plugins.XAsset
 
 		internal override void Load()
 		{
-			asset = AssetBundle.LoadFromFile(name);
-			if (assetBundle == null)
+#if EncryptBundleOffset
+			asset = AssetBundle.LoadFromFile(name, 0, 327 + (ulong)(System.IO.Path.GetFileNameWithoutExtension(name).Length));
+#else
+            asset = AssetBundle.LoadFromFile(name);
+#endif
+            if (assetBundle == null)
 				error = name + " LoadFromFile failed.";
 		}
 
@@ -87,8 +91,12 @@ namespace Plugins.XAsset
 
 		internal override void Load()
 		{
-			_request = AssetBundle.LoadFromFileAsync(name);
-			if (_request == null)
+#if EncryptBundleOffset
+			_request = AssetBundle.LoadFromFileAsync(name, 0, 327 + (ulong)(System.IO.Path.GetFileNameWithoutExtension(name).Length));
+#else
+            _request = AssetBundle.LoadFromFileAsync(name);
+#endif
+            if (_request == null)
 			{
 				error = name + " LoadFromFile failed.";
 				return;
