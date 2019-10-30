@@ -38,7 +38,7 @@ namespace Plugins.XAsset
     public static class Utility
     {
         public const string AssetBundles = "AssetBundles";
-        public const string AssetsManifestAsset = "Assets/Manifest.asset";
+        public const string AssetsManifestAsset = "Assets/Res/Manifest.asset";
         public static bool assetBundleMode = true;
         public static LoadDelegate loadDelegate = null;
         public static GetPlatformDelegate getPlatformDelegate = null;

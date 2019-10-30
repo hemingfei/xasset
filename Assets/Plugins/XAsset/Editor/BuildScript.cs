@@ -344,6 +344,11 @@ namespace Plugins.XAsset.Editor
             var asset = AssetDatabase.LoadAssetAtPath<T>(path);
             if (asset == null)
             {
+                string inputDir = Path.GetDirectoryName(path);
+                if (!Directory.Exists(inputDir))
+                {
+                    Directory.CreateDirectory(inputDir);
+                }
                 asset = ScriptableObject.CreateInstance<T>();
                 AssetDatabase.CreateAsset(asset, path);
                 AssetDatabase.SaveAssets();
@@ -354,7 +359,7 @@ namespace Plugins.XAsset.Editor
 
         public static Settings GetSettings()
         {
-            const string path = "Assets/Settings.asset";
+            const string path = "Assets/Res/Settings.asset";
             return GetAsset<Settings>(path);
         }
 
