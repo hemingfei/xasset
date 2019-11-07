@@ -42,7 +42,7 @@ namespace Plugins.XAsset
 
 		internal override void Load()
 		{
-#if EncryptBundleOffset
+#if ENCRYPT_AB_OFFSET
 			asset = AssetBundle.LoadFromFile(name, 0, 327 + (ulong)(System.IO.Path.GetFileNameWithoutExtension(name).Length));
 #else
             asset = AssetBundle.LoadFromFile(name);
@@ -91,7 +91,7 @@ namespace Plugins.XAsset
 
 		internal override void Load()
 		{
-#if EncryptBundleOffset
+#if ENCRYPT_AB_OFFSET
 			_request = AssetBundle.LoadFromFileAsync(name, 0, 327 + (ulong)(System.IO.Path.GetFileNameWithoutExtension(name).Length));
 #else
             _request = AssetBundle.LoadFromFileAsync(name);

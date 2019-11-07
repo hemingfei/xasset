@@ -184,11 +184,11 @@ namespace Plugins.XAsset.Editor
         }
 
         public static void SetAssetBundleNameAndVariant(string assetPath, string bundleName, string variant)
-        { 
+        {
             var importer = AssetImporter.GetAtPath(assetPath);
-            if(importer == null) return;
+            if (importer == null) return;
             importer.assetBundleName = bundleName;
-            importer.assetBundleVariant = variant; 
+            importer.assetBundleVariant = variant;
         }
 
         public static void BuildManifest()
@@ -199,20 +199,20 @@ namespace Plugins.XAsset.Editor
             var bundles = AssetDatabase.GetAllAssetBundleNames();
 
             List<string> dirs = new List<string>();
-            List<AssetData> assets = new List<AssetData>();  
+            List<AssetData> assets = new List<AssetData>();
 
             for (int i = 0; i < bundles.Length; i++)
             {
                 var paths = AssetDatabase.GetAssetPathsFromAssetBundle(bundles[i]);
-                foreach(var path in paths) 
+                foreach (var path in paths)
                 {
                     var dir = Path.GetDirectoryName(path);
-                    var index = dirs.FindIndex((o)=>o.Equals(dir));
-                    if(index == -1) 
+                    var index = dirs.FindIndex((o) => o.Equals(dir));
+                    if (index == -1)
                     {
                         index = dirs.Count;
                         dirs.Add(dir);
-                    }  
+                    }
 
                     var asset = new AssetData();
                     asset.bundle = i;
@@ -265,6 +265,11 @@ namespace Plugins.XAsset.Editor
                     updates.Add(item.Key);
             }
 
+            // Æ«ÒÆ¼ÓÃÜ
+#if ENCRYPT_AB_OFFSET
+            EncryptBundleOffset(GetPlatformForAssetBundles(EditorUserBuildSettings.activeBuildTarget));
+#endif
+
             if (updates.Count > 0)
             {
                 using (var s = new StreamWriter(File.Open(outputPath + "/updates.txt", FileMode.Append)))
@@ -277,12 +282,11 @@ namespace Plugins.XAsset.Editor
                 }
 
                 // Æ«ÒÆ¼ÓÃÜ
-#if EncryptBundleOffset
+#if ENCRYPT_AB_OFFSET
                 foreach (var item in updates)
                 {
                     EncryptBundleOffset(item);
-                }
-                EncryptBundleOffset(GetPlatformForAssetBundles(EditorUserBuildSettings.activeBuildTarget));
+                }   
 #endif
 
                 // Ð´Èë°æ±¾ºÅÄÚÈÝ
@@ -335,7 +339,7 @@ namespace Plugins.XAsset.Editor
         }
 
         #region AB°ü Æ«ÒÆ¼ÓÃÜ
-#if EncryptBundleOffset
+#if ENCRYPT_AB_OFFSET
         /// <summary>
         /// AB°üÆ«ÒÆ¼ÓÃÜ
         /// </summary>
@@ -351,6 +355,18 @@ namespace Plugins.XAsset.Editor
             byte[] buffer = new byte[filelen];
             CopyHead(filedata, buffer, (uint)offset);
             CopyTo(filedata, buffer, (uint)offset);
+            buffer[0] = (byte)'h';
+            buffer[1] = (byte)'e';
+            buffer[2] = (byte)'g';
+            buffer[3] = (byte)'a';
+            buffer[4] = (byte)'m';
+            buffer[5] = (byte)'e';
+            buffer[6] = (byte)'t';
+            buffer[7] = (byte)'e';
+            buffer[8] = (byte)'c';
+            buffer[9] = (byte)'h';
+            buffer[10] = (byte)'!';
+
             FileStream fs = File.OpenWrite(filepath);
             fs.Write(buffer, 0, filelen);
             fs.Close();
