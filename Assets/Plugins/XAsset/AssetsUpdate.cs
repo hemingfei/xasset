@@ -206,7 +206,7 @@ namespace Plugins.XAsset
                         break;
                 }
 
-                GUILayout.Label(string.Format("{0}:{1}", state, message));
+                GUILayout.Label(Hegametech.Framework.Utility.Text.Format("{0}:{1}", state, message));
                 if (state == State.Completed)
                 {
                     GUILayout.Label("AllBundleAssets:");
@@ -297,7 +297,7 @@ namespace Plugins.XAsset
                 StringBuilder sb = new StringBuilder();
                 foreach (var item in _versions)
                 {
-                    sb.AppendLine(string.Format("{0}:{1}", item.Key, item.Value));
+                    sb.AppendLine(Hegametech.Framework.Utility.Text.Format("{0}:{1}", item.Key, item.Value));
                 }
 
                 var path = Utility.GetRelativePath4Update(versionsTxt);
@@ -315,7 +315,7 @@ namespace Plugins.XAsset
                     completed();
                 }
 
-                message = string.Format("{0} files has update.", _downloads.Count);
+                message = Hegametech.Framework.Utility.Text.Format("{0} files has update.", _downloads.Count);
                 return;
             }
 

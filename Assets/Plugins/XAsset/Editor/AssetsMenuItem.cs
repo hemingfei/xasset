@@ -32,6 +32,9 @@ namespace Plugins.XAsset.Editor
 {
     public static class AssetsMenuItem
     {
+        #region hmf edit
+        private const string ClearAssetsTag = "Assets/AssetBundles/清除标记";
+        #endregion
         private const string KMarkAssetsWithDir = "Assets/AssetBundles/按目录标记";
         private const string KMarkAssetsWithFile = "Assets/AssetBundles/按文件标记";
         private const string KMarkAssetsWithName = "Assets/AssetBundles/按名称标记";
@@ -90,13 +93,13 @@ namespace Plugins.XAsset.Editor
         public static void MarkAssetsWithDir()
         {
             var settings = BuildScript.GetSettings();
-            assetRootPath = settings.assetRootPath; 
+            assetRootPath = settings.assetRootPath.Replace("\\", "/"); 
             var assetsManifest = BuildScript.GetManifest();
             var assets = Selection.GetFiltered<Object>(SelectionMode.DeepAssets);
             for (var i = 0; i < assets.Length; i++)
             {
                 var asset = assets[i];
-                var path = AssetDatabase.GetAssetPath(asset);
+                var path = AssetDatabase.GetAssetPath(asset).Replace("\\", "/");
                 if (Directory.Exists(path) || path.EndsWith(".cs", System.StringComparison.CurrentCulture))
                     continue;
                 if (EditorUtility.DisplayCancelableProgressBar(KMarkAssets, path, i * 1f / assets.Length))
@@ -113,13 +116,13 @@ namespace Plugins.XAsset.Editor
         public static void MarkAssetsWithFile()
         {
             var settings = BuildScript.GetSettings();
-            assetRootPath = settings.assetRootPath; 
+            assetRootPath = settings.assetRootPath.Replace("\\", "/"); 
             var assetsManifest = BuildScript.GetManifest();
             var assets = Selection.GetFiltered<Object>(SelectionMode.DeepAssets);
             for (var i = 0; i < assets.Length; i++)
             {
                 var asset = assets[i];
-                var path = AssetDatabase.GetAssetPath(asset);
+                var path = AssetDatabase.GetAssetPath(asset).Replace("\\", "/");
                 if (Directory.Exists(path) || path.EndsWith(".cs", System.StringComparison.CurrentCulture))
                     continue;
                 if (EditorUtility.DisplayCancelableProgressBar(KMarkAssets, path, i * 1f / assets.Length))
@@ -132,8 +135,8 @@ namespace Plugins.XAsset.Editor
                 dir = dir.Replace("\\", "/") + "/";
                 if (name == null)
                     continue;
-
-                var assetBundleName = TrimedAssetBundleName(Path.Combine(dir, name));
+                var assetBundleNameFull = Path.Combine(dir, name).Replace("\\", "/");
+                var assetBundleName = TrimedAssetBundleName(assetBundleNameFull);
                 BuildScript.SetAssetBundleNameAndVariant(path, assetBundleName.ToLower(), null);
             }
             EditorUtility.SetDirty(assetsManifest);
@@ -145,13 +148,13 @@ namespace Plugins.XAsset.Editor
         public static void MarkAssetsWithName()
         {
             var settings = BuildScript.GetSettings();
-            assetRootPath = settings.assetRootPath; 
+            assetRootPath = settings.assetRootPath.Replace("\\", "/"); 
             var assets = Selection.GetFiltered<Object>(SelectionMode.DeepAssets);
             var assetsManifest = BuildScript.GetManifest();
             for (var i = 0; i < assets.Length; i++)
             {
                 var asset = assets[i];
-                var path = AssetDatabase.GetAssetPath(asset);
+                var path = AssetDatabase.GetAssetPath(asset).Replace("\\", "/");
                 if (Directory.Exists(path) || path.EndsWith(".cs", System.StringComparison.CurrentCulture))
                     continue;
                 if (EditorUtility.DisplayCancelableProgressBar(KMarkAssets, path, i * 1f / assets.Length))
@@ -190,5 +193,91 @@ namespace Plugins.XAsset.Editor
             EditorGUIUtility.systemCopyBuffer = assetPath;
             Debug.Log(assetPath);
         }
+
+        #region hmf edit
+        [MenuItem(ClearAssetsTag)]
+        public static void ClearAssetNameAsFolderName()
+        {
+            string selectPath = Hegametech.Framework.Common.Editor.EditorPathHelper.GetSelectedDirAssetsPath();
+            if (selectPath == null)
+            {
+                return;
+            }
+            AutoClearAssetNameInFolder(selectPath);
+            AssetDatabase.SaveAssets();
+            UnityEngine.Debug.Log("Finish Clear AB Name.");
+        }
+
+        static bool IsAsset(string fileName)
+        {
+            if (fileName.EndsWith(".meta") || fileName.EndsWith(".gaf") || fileName.EndsWith(".DS_Store") || fileName.EndsWith(".cs"))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        // 递归清理文件夹下所有Asset 文件
+        /// </summary>
+        /// <param name="folderPath">Asset目录下文件夹</param>
+        private static void AutoClearAssetNameInFolder(string folderPath)
+        {
+            if (folderPath == null)
+            {
+                UnityEngine.Debug.LogWarning("Folder Path Is Null!");
+                return;
+            }
+            // 清除文件夹的标记
+            {
+                AssetImporter folderAi = AssetImporter.GetAtPath(folderPath);
+                if (folderAi == null)
+                {
+                    UnityEngine.Debug.LogError("Not Find Folder Asset:" + folderPath);
+                }
+                else
+                {
+                    folderAi.assetBundleName = null;
+                }
+            }
+
+            string workPath = Hegametech.Framework.Common.Editor.EditorPathHelper.FullPathToAssetsPath(folderPath);
+            string assetBundleName = null;
+            //处理文件
+            var filePaths = Directory.GetFiles(workPath);
+            for (int i = 0; i < filePaths.Length; ++i)
+            {
+                if (!IsAsset(filePaths[i]))
+                {
+                    continue;
+                }
+
+                string fileName = Path.GetFileName(filePaths[i]);
+
+                string fullFileName = string.Format("{0}/{1}", folderPath, fileName);
+
+                AssetImporter ai = AssetImporter.GetAtPath(fullFileName);
+                if (ai == null)
+                {
+                    UnityEngine.Debug.LogError("Not Find Asset:" + fullFileName);
+                    continue;
+                }
+                else
+                {
+                    ai.assetBundleName = assetBundleName;
+                }
+            }
+
+            //递归处理文件夹
+            var dirs = Directory.GetDirectories(workPath);
+            for (int i = 0; i < dirs.Length; ++i)
+            {
+                string fileName = Path.GetFileName(dirs[i]);
+
+                fileName = string.Format("{0}/{1}", folderPath, fileName);
+                AutoClearAssetNameInFolder(fileName);
+            }
+        }
+        #endregion
     }
 }

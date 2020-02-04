@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 
 using Hegametech.Framework;
+using Hegametech.Framework.Log;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -65,7 +66,7 @@ namespace Plugins.XAsset
 
             if (string.IsNullOrEmpty(Utility.dataPath)) Utility.dataPath = Application.streamingAssetsPath;
 
-            Log(string.Format("Init->assetBundleMode {0} | dataPath {1}", Utility.assetBundleMode, Utility.dataPath));
+            Log(Hegametech.Framework.Utility.Text.Format("Init->assetBundleMode {0} | dataPath {1}", Utility.assetBundleMode, Utility.dataPath));
 
             if (Utility.assetBundleMode)
             {
@@ -95,7 +96,7 @@ namespace Plugins.XAsset
                         for (int i = 0, max = manifest.assets.Length; i < max; i++)
                         {
                             var item = manifest.assets[i];
-                            _bundleAssets[string.Format("{0}/{1}", dirs[item.dir], item.name)] = item.bundle;
+                            _bundleAssets[Hegametech.Framework.Utility.Text.Format("{0}/{1}", dirs[item.dir], item.name)] = item.bundle;
                         }
 
                         if (onSuccess != null)
@@ -188,11 +189,12 @@ namespace Plugins.XAsset
             Bundles.Update();
         }
 
-        [Conditional("LOG_ENABLE")]
-        private static void Log(string s)
+        public static void Log(string s)
         {
-            Debug.Log(string.Format("[Assets]{0}", s));
+            Logg.Debug(Hegametech.Framework.Utility.Text.Format("[Assets] {0}", s)); 
         }
+        public static ILog Logg { get { if (log == null) { log = LogManager.GetLogger(typeof(Assets)); } return log; } }
+        private static ILog log;
 
         private static Asset Load(string path, Type type, bool async)
         {
@@ -235,7 +237,7 @@ namespace Plugins.XAsset
             asset.Load();
             asset.Retain();
 
-            Log(string.Format("Load->{0}|{1}", path, assetBundleName));
+            Log(Hegametech.Framework.Utility.Text.Format("Load->{0}|{1}", path, assetBundleName));
             return asset;
         }
 

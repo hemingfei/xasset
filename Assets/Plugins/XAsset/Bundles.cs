@@ -69,7 +69,7 @@ namespace Plugins.XAsset
 				if (onError != null) {
 					onError (request.error);
 					return;
-				} 
+				}
 				manifest = request.assetBundle.LoadAsset<AssetBundleManifest> ("AssetBundleManifest");
 				request.assetBundle.Unload (false);
 				request.assetBundle = null;
@@ -136,10 +136,9 @@ namespace Plugins.XAsset
 			}
 		}
 
-		[Conditional ("LOG_ENABLE")]
 		private static void Log (string s)
 		{
-			Debug.Log ("[Bundles]" + s);
+			Assets.Log("[Bundles]" + s);
 		}
 
 		private static Bundle Load (string assetBundleName, bool isLoadingAssetBundleManifest, bool asyncMode)
