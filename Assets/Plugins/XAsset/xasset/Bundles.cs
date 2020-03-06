@@ -4,7 +4,7 @@
 // Author:
 //       fjy <jiyuan.feng@live.com>
 //
-// Copyright (c) 2019 fjy
+// Copyright (c) 2020 fjy
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -30,17 +30,15 @@ using System.Diagnostics;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
-namespace Plugins.XAsset
+namespace xasset
 {
 	public delegate string OverrideDataPathDelegate (string bundleName);
 
 	public static class Bundles
 	{
 		private static readonly int MAX_LOAD_SIZE_PERFREME = 3;
-		// ReSharper disable once InconsistentNaming
 		private static readonly List<Bundle> _bundles = new List<Bundle> ();
 
-		// ReSharper disable once InconsistentNaming
 		private static readonly List<Bundle> _unusedBundles = new List<Bundle> ();
 
 		private static readonly List<Bundle> _ready2Load = new List<Bundle> ();
@@ -48,8 +46,6 @@ namespace Plugins.XAsset
 		private static readonly List<Bundle> _loading = new List<Bundle> ();
 
 		public static string[] activeVariants { get; set; }
-
-		private static string dataPath { get; set; }
 
 		private static AssetBundleManifest manifest { get; set; }
 
@@ -60,16 +56,15 @@ namespace Plugins.XAsset
 			return manifest == null ? null : manifest.GetAllDependencies (bundle);
 		}
 
-		public static void Initialize (string path, string platform, Action onSuccess, Action<string> onError)
+		public static void Initialize (Action onSuccess, Action<string> onError)
 		{
-			dataPath = path;
-			var request = Load (platform, true, true);
+			var request = Load (Assets.platform, true, true);
 			request.completed += delegate {
 				if (request.error != null)
 				if (onError != null) {
 					onError (request.error);
 					return;
-				}
+				} 
 				manifest = request.assetBundle.LoadAsset<AssetBundleManifest> ("AssetBundleManifest");
 				request.assetBundle.Unload (false);
 				request.assetBundle = null;
@@ -90,7 +85,6 @@ namespace Plugins.XAsset
 			return Load (assetBundleName, false, true);
 		}
 
-		// ReSharper disable once MemberCanBePrivate.Global
 		public static void Unload (Bundle bundle)
 		{
 			bundle.Release ();
@@ -136,9 +130,10 @@ namespace Plugins.XAsset
 			}
 		}
 
+		[Conditional ("LOG_ENABLE")]
 		private static void Log (string s)
 		{
-			Assets.Log("[Bundles]" + s);
+			Debug.Log ("[Bundles]" + s);
 		}
 
 		private static Bundle Load (string assetBundleName, bool isLoadingAssetBundleManifest, bool asyncMode)
@@ -158,6 +153,7 @@ namespace Plugins.XAsset
 			}
 
 			var url = GetDataPath (assetBundleName) + assetBundleName;
+
 			for (int i = 0, max = _bundles.Count; i < max; i++) {
 				var item = _bundles [i];
 				if (!item.name.Equals (url))
@@ -195,7 +191,7 @@ namespace Plugins.XAsset
 		private static string GetDataPath (string bundleName)
 		{
 			if (OverrideBaseDownloadingUrl == null)
-				return dataPath;
+				return Assets.assetBundleDataPath;
 			foreach (var @delegate in OverrideBaseDownloadingUrl.GetInvocationList()) {
 				var method = (OverrideDataPathDelegate)@delegate;
 				var res = method (bundleName);
@@ -203,7 +199,7 @@ namespace Plugins.XAsset
 					return res;
 			}
 
-			return dataPath;
+			return Assets.assetBundleDataPath;
 		}
 
 		internal static void Update ()

@@ -3,34 +3,17 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1353581271, guid: e1af893c2924147d0915dfddb38c8270, type: 3}
+  m_Script: {fileID: 11500000, guid: 31930aabdb9d3a34cb7509d8e90bc28a, type: 3}
   m_Name: Manifest
   m_EditorClassIdentifier: 
   downloadURL: 
   activeVariants: []
-  bundles:
-  - prefabs/canvas
-  - prefabs/uiroot2
-  - scenes/init
-  - scenes/test
-  dirs:
-  - Assets/Demo/Prefabs
-  - Assets/Demo/Scenes
-  assets:
-  - bundle: 0
-    dir: 0
-    name: Canvas.prefab
-  - bundle: 1
-    dir: 0
-    name: UIRoot2.prefab
-  - bundle: 2
-    dir: 1
-    name: Init.unity
-  - bundle: 3
-    dir: 1
-    name: Test.unity
+  bundles: []
+  dirs: []
+  assets: []

@@ -34,7 +34,7 @@ namespace xasset
 {
 	public class AssetsUpdate : MonoBehaviour
 	{
-		public enum State
+		public enum State 
 		{
 			Wait,
 			Checking,

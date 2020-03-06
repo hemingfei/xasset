@@ -4,7 +4,7 @@
 // Author:
 //       fjy <jiyuan.feng@live.com>
 //
-// Copyright (c) 2019 fjy
+// Copyright (c) 2020 fjy
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -27,15 +27,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using UnityEngine;
+#if UNITY_2018_3_OR_NEWER
 using UnityEngine.Networking;
+#endif
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
 
-namespace Plugins.XAsset
+namespace xasset
 {
     public enum LoadState
     {
@@ -59,32 +60,14 @@ namespace Plugins.XAsset
             loadState = LoadState.Init;
         }
 
-        public virtual bool isDone
-        {
-            get { return true; }
-        }
-
-        public virtual float progress
-        {
-            get { return 1; }
-        }
-
+        public virtual bool isDone { get { return true; } }
+        public virtual float progress { get { return 1; } }
         public virtual string error { get; protected set; }
-
-        // ReSharper disable once MemberCanBeProtected.Global
-        // ReSharper disable once UnusedAutoPropertyAccessor.Global
         public string text { get; protected set; }
-
-        // ReSharper disable once MemberCanBeProtected.Global
-        // ReSharper disable once UnusedAutoPropertyAccessor.Global
         public byte[] bytes { get; protected set; }
-
         public Object asset { get; internal set; }
 
-        private bool checkRequires
-        {
-            get { return _requires != null; }
-        }
+        private bool checkRequires { get { return _requires != null; } }
 
         public void Require(Object obj)
         {
@@ -95,7 +78,6 @@ namespace Plugins.XAsset
             Retain();
         }
 
-        // ReSharper disable once IdentifierTypo
         public void Dequire(Object obj)
         {
             if (_requires == null)
@@ -123,30 +105,26 @@ namespace Plugins.XAsset
 
         internal virtual void Load()
         {
-            _Load();
-        }
-
-        [Conditional("UNITY_EDITOR")]
-        private void _Load()
-        {
-            if (Utility.loadDelegate != null)
-                asset = Utility.loadDelegate(name, assetType);
-        }
-
-        [Conditional("UNITY_EDITOR")]
-        private void _Unload()
-        {
+            if (!Assets.assetBundleMode && Assets.loadDelegate != null)
+                asset = Assets.loadDelegate(name, assetType);
             if (asset == null)
-                return;
-            if (!(asset is GameObject))
-                Resources.UnloadAsset(asset);
-
-            asset = null;
+            {
+                error = "error! file not exist:" + name;
+            }
         }
 
         internal virtual void Unload()
         {
-            _Unload();
+            if (asset == null)
+                return;
+
+            if (!Assets.assetBundleMode)
+            {
+                if (!(asset is GameObject))
+                    Resources.UnloadAsset(asset);
+            }
+
+            asset = null;
         }
 
         internal bool Update()
@@ -170,7 +148,6 @@ namespace Plugins.XAsset
             return false;
         }
 
-        // ReSharper disable once InconsistentNaming
         public event Action<Asset> completed;
 
         #region IEnumerator implementation
@@ -371,7 +348,6 @@ namespace Plugins.XAsset
     public class SceneAssetAsync : SceneAsset
     {
         private AsyncOperation _request;
-        public AsyncOperation AsyncOperation { get { return _request; } }
 
         public SceneAssetAsync(string path, bool addictive)
             : base(path, addictive)
@@ -532,7 +508,7 @@ namespace Plugins.XAsset
                         else
                         {
                             asset = _www.texture;
-                        } 
+                        }
 #endif
                         loadState = LoadState.Loaded;
                         return true;
@@ -554,7 +530,7 @@ namespace Plugins.XAsset
 #if UNITY_2018_3_OR_NEWER
             get { return _www.downloadProgress; }
 #else
-            get { return _www.progress;}
+            get { return _www.progress; }
 #endif
         }
 

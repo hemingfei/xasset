@@ -4,7 +4,7 @@
 // Author:
 //       fjy <jiyuan.feng@live.com>
 //
-// Copyright (c) 2019 fjy
+// Copyright (c) 2020 fjy
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -28,7 +28,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Plugins.XAsset
+namespace xasset
 {
 	public class Bundle : Asset
 	{
@@ -42,12 +42,8 @@ namespace Plugins.XAsset
 
 		internal override void Load()
 		{
-#if ENCRYPT_AB_OFFSET
-			asset = AssetBundle.LoadFromFile(name, 0, 327 + (ulong)(System.IO.Path.GetFileNameWithoutExtension(name).Length));
-#else
-            asset = AssetBundle.LoadFromFile(name);
-#endif
-            if (assetBundle == null)
+			asset = AssetBundle.LoadFromFile(name);
+			if (assetBundle == null)
 				error = name + " LoadFromFile failed.";
 		}
 
@@ -94,12 +90,8 @@ namespace Plugins.XAsset
 
 		internal override void Load()
 		{
-#if ENCRYPT_AB_OFFSET
-			_request = AssetBundle.LoadFromFileAsync(name, 0, 327 + (ulong)(System.IO.Path.GetFileNameWithoutExtension(name).Length));
-#else
-            _request = AssetBundle.LoadFromFileAsync(name);
-#endif
-            if (_request == null)
+			_request = AssetBundle.LoadFromFileAsync(name);
+			if (_request == null)
 			{
 				error = name + " LoadFromFile failed.";
 				return;

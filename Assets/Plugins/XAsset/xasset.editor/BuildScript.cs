@@ -4,7 +4,7 @@
 // Author:
 //       fjy <jiyuan.feng@live.com>
 //
-// Copyright (c) 2019 fjy
+// Copyright (c) 2020 fjy
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -33,18 +33,44 @@ using System.Net.Sockets;
 using UnityEditor;
 using UnityEngine;
 
-namespace Plugins.XAsset.Editor
+namespace xasset.editor
 {
     public static class BuildScript
     {
         public static string overloadedDevelopmentServerURL = "";
+
+        public static void ClearAssetBundles()
+        {
+            string[] allAssetBundleNames = AssetDatabase.GetAllAssetBundleNames();
+            for (int i = 0; i < allAssetBundleNames.Length; i++)
+            {
+                string text = allAssetBundleNames[i];
+                if (EditorUtility.DisplayCancelableProgressBar(string.Format("Clear AssetBundles {0}/{1}", i, allAssetBundleNames.Length), text, i * 1f / allAssetBundleNames.Length))
+                {
+                    break;
+                }
+                AssetDatabase.RemoveAssetBundleName(text, true);
+            }
+            EditorUtility.ClearProgressBar();
+        }
+
+        internal static void ApplyBuildRules()
+        {
+            var rules = GetBuildRules();
+            rules.Apply();
+        }
+
+        internal static BuildRules GetBuildRules()
+        {
+            return GetAsset<BuildRules>("Assets/BuildRules.asset");
+        }
 
         public static void CopyAssetBundlesTo(string outputPath)
         {
             if (!Directory.Exists(outputPath))
                 Directory.CreateDirectory(outputPath);
             var outputFolder = GetPlatformName();
-            var source = Path.Combine(Path.Combine(Environment.CurrentDirectory, Utility.AssetBundles), outputFolder);
+            var source = Path.Combine(Path.Combine(Environment.CurrentDirectory, Assets.AssetBundles), outputFolder);
             if (!Directory.Exists(source))
                 Debug.Log("No assetBundle output folder, try to build the assetBundles first.");
             var destination = Path.Combine(outputPath, outputFolder);
@@ -88,18 +114,18 @@ namespace Plugins.XAsset.Editor
 
         private static string[] GetLevelsFromBuildSettings()
         {
-            return EditorBuildSettings.scenes.Select(scene => scene.path).ToArray();
+            return GetSettings().scenes;
         }
 
         private static string GetAssetBundleManifestFilePath()
         {
-            var relativeAssetBundlesOutputPathForPlatform = Path.Combine(Utility.AssetBundles, GetPlatformName());
+            var relativeAssetBundlesOutputPathForPlatform = Path.Combine(Assets.AssetBundles, GetPlatformName());
             return Path.Combine(relativeAssetBundlesOutputPathForPlatform, GetPlatformName()) + ".manifest";
         }
 
         public static void BuildStandalonePlayer()
         {
-            var outputPath = EditorUtility.SaveFolderPanel("Choose Location of the Built Game", "", "");
+            var outputPath = Path.Combine(System.Environment.CurrentDirectory, "autopack/" + GetPlatformName().ToLower()); //EditorUtility.SaveFolderPanel("Choose Location of the Built Game", "", "");
             if (outputPath.Length == 0)
                 return;
 
@@ -132,7 +158,7 @@ namespace Plugins.XAsset.Editor
         public static string CreateAssetBundleDirectory()
         {
             // Choose the output path according to the build target.
-            var outputPath = Path.Combine(Utility.AssetBundles, GetPlatformName());
+            var outputPath = Path.Combine(Assets.AssetBundles, GetPlatformName());
             if (!Directory.Exists(outputPath))
                 Directory.CreateDirectory(outputPath);
 
@@ -184,37 +210,35 @@ namespace Plugins.XAsset.Editor
         }
 
         public static void SetAssetBundleNameAndVariant(string assetPath, string bundleName, string variant)
-        { 
+        {
             var importer = AssetImporter.GetAtPath(assetPath);
-            if(importer == null) return;
+            if (importer == null) return;
             importer.assetBundleName = bundleName;
-            importer.assetBundleVariant = variant; 
+            importer.assetBundleVariant = variant;
         }
 
         public static void BuildManifest()
-        {
-            var manifest = GetManifest();
-
+        { 
             AssetDatabase.RemoveUnusedAssetBundleNames();
-            var bundles = AssetDatabase.GetAllAssetBundleNames();
-
+            var bundles = AssetDatabase.GetAllAssetBundleNames(); 
+            var manifest = GetManifest();
             List<string> dirs = new List<string>();
-            List<AssetData> assets = new List<AssetData>();  
+            List<AssetRef> assets = new List<AssetRef>();
 
             for (int i = 0; i < bundles.Length; i++)
             {
                 var paths = AssetDatabase.GetAssetPathsFromAssetBundle(bundles[i]);
-                foreach(var path in paths) 
+                foreach (var path in paths)
                 {
-                    var dir = Path.GetDirectoryName(path).Replace("\\", "/");
-                    var index = dirs.FindIndex((o)=>o.Equals(dir));
-                    if(index == -1) 
+                    var dir = Path.GetDirectoryName(path);
+                    var index = dirs.FindIndex((o) => o.Equals(dir));
+                    if (index == -1)
                     {
                         index = dirs.Count;
                         dirs.Add(dir);
-                    }  
+                    }
 
-                    var asset = new AssetData();
+                    var asset = new AssetRef();
                     asset.bundle = i;
                     asset.dir = index;
                     asset.name = Path.GetFileName(path);
@@ -233,7 +257,7 @@ namespace Plugins.XAsset.Editor
 
             EditorUtility.SetDirty(manifest);
             AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
+            AssetDatabase.Refresh(); 
         }
 
         public static void BuildAssetBundles()
@@ -265,11 +289,6 @@ namespace Plugins.XAsset.Editor
                     updates.Add(item.Key);
             }
 
-            // 偏移加密
-#if ENCRYPT_AB_OFFSET
-            EncryptBundleOffset(GetPlatformForAssetBundles(EditorUserBuildSettings.activeBuildTarget));
-#endif
-
             if (updates.Count > 0)
             {
                 using (var s = new StreamWriter(File.Open(outputPath + "/updates.txt", FileMode.Append)))
@@ -281,35 +300,6 @@ namespace Plugins.XAsset.Editor
                     s.Close();
                 }
 
-                // 偏移加密
-#if ENCRYPT_AB_OFFSET
-                foreach (var item in updates)
-                {
-                    EncryptBundleOffset(item);
-                }   
-#endif
-
-                // 写入版本号内容
-                {
-                    using (var appconfigS = new StreamWriter(File.Open(outputPath + "/appconfig.txt", FileMode.OpenOrCreate)))
-                    {
-                        string folderPath = Hegametech.Framework.AppConfig.APP_CONFIG_DIR_PATH;
-                        string appDataPath = folderPath + Hegametech.Framework.AppConfig.APP_CONFIG_FILE + ".asset";
-                        var data = AssetDatabase.LoadAssetAtPath<Hegametech.Framework.AppConfig>(appDataPath);
-                        if (data == null)
-                        {
-                            Debug.LogError("no appconfig found:" + appDataPath);
-                        }
-                        data.ResVersionAutoUpdate();
-                        EditorUtility.SetDirty(data);
-                        string appresVersion = data.AppVersion + "|" + data.ResVersion;
-                        appconfigS.WriteLine(appresVersion); // 这里是版本
-                        appconfigS.Flush();
-                        appconfigS.Close();
-                        AssetDatabase.SaveAssets();
-                    }
-                }
-
                 SaveVersions(versionsTxt, buildVersions);
             }
             else
@@ -317,7 +307,7 @@ namespace Plugins.XAsset.Editor
                 Debug.Log("nothing to update.");
             }
 
-            string[] ignoredFiles = { GetPlatformName(), "versions.txt", "updates.txt", "manifest", "appconfig.txt" };
+            string[] ignoredFiles = { GetPlatformName(), "versions.txt", "updates.txt", "manifest" };
 
             var files = Directory.GetFiles(outputPath, "*", SearchOption.AllDirectories);
 
@@ -338,69 +328,10 @@ namespace Plugins.XAsset.Editor
             deletes.Clear();
         }
 
-        #region AB包 偏移加密
-#if ENCRYPT_AB_OFFSET
-        /// <summary>
-        /// AB包偏移加密
-        /// </summary>
-        /// <param name="bundleName"></param>
-        private static void EncryptBundleOffset(string bundleName)
-        {
-            var outputPath = CreateAssetBundleDirectory();
-            string filepath = outputPath + "/" + bundleName;
-            //Debug.Log($"偏移加密 bundleName  {bundleName}  ， filepath {filepath} ， Path.GetFileNameWithoutExtension(bundleName)  {Path.GetFileNameWithoutExtension(bundleName)}");
-            int offset = 327 + System.IO.Path.GetFileNameWithoutExtension(bundleName).Length;
-            byte[] filedata = File.ReadAllBytes(filepath);
-            int filelen = (offset + filedata.Length);
-            byte[] buffer = new byte[filelen];
-            CopyHead(filedata, buffer, (uint)offset);
-            CopyTo(filedata, buffer, (uint)offset);
-            buffer[0] = (byte)'h';
-            buffer[1] = (byte)'e';
-            buffer[2] = (byte)'g';
-            buffer[3] = (byte)'a';
-            buffer[4] = (byte)'m';
-            buffer[5] = (byte)'e';
-            buffer[6] = (byte)'t';
-            buffer[7] = (byte)'e';
-            buffer[8] = (byte)'c';
-            buffer[9] = (byte)'h';
-            buffer[10] = (byte)'!';
-
-            FileStream fs = File.OpenWrite(filepath);
-            fs.Write(buffer, 0, filelen);
-            fs.Close();
-        }
-
-        static void CopyHead(byte[] source, byte[] dest, uint len)
-        {
-            for (int slen = 0; slen < source.Length; slen++)
-            {
-                if (slen < len)
-                {
-                    dest[slen] = source[slen];
-                    continue;
-                }
-                break;
-            }
-        }
-
-        private static void CopyTo(byte[] source, byte[] dest, uint o)
-        {
-            uint last = (uint)source.Length;
-            for (uint i = 0; i < last; i++)
-            {
-                uint ii = i + o;
-                dest[ii] = source[i];
-            }
-        }
-#endif
-        #endregion
-
         private static string GetBuildTargetName(BuildTarget target)
         {
-            var name = PlayerSettings.productName + "_" + PlayerSettings.bundleVersion;
-            // ReSharper disable once SwitchStatementMissingSomeCases
+            var time = System.DateTime.Now.ToString("yyyyMMdd-HHmmss");
+            var name = PlayerSettings.productName + "-v" + PlayerSettings.bundleVersion + "-" + time;
             switch (target)
             {
                 case BuildTarget.Android:
@@ -415,10 +346,10 @@ namespace Plugins.XAsset.Editor
                     return "/" + name + ".app";
 
 #else
-                    case BuildTarget.StandaloneOSXIntel:
-                    case BuildTarget.StandaloneOSXIntel64:
-                    case BuildTarget.StandaloneOSXUniversal:
-                                        return "/" + name + ".app";
+                case BuildTarget.StandaloneOSXIntel:
+                case BuildTarget.StandaloneOSXIntel64:
+                case BuildTarget.StandaloneOSXUniversal:
+                    return "/" + name + ".app";
 
 #endif
 
@@ -437,11 +368,6 @@ namespace Plugins.XAsset.Editor
             var asset = AssetDatabase.LoadAssetAtPath<T>(path);
             if (asset == null)
             {
-                string inputDir = Path.GetDirectoryName(path);
-                if (!Directory.Exists(inputDir))
-                {
-                    Directory.CreateDirectory(inputDir);
-                }
                 asset = ScriptableObject.CreateInstance<T>();
                 AssetDatabase.CreateAsset(asset, path);
                 AssetDatabase.SaveAssets();
@@ -452,13 +378,13 @@ namespace Plugins.XAsset.Editor
 
         public static Settings GetSettings()
         {
-            const string path = "Assets/Res/Settings.asset";
+            const string path = "Assets/Settings.asset";
             return GetAsset<Settings>(path);
         }
 
-        public static AssetsManifest GetManifest()
+        public static AssetManifest GetManifest()
         {
-            return GetAsset<AssetsManifest>(Utility.AssetsManifestAsset);
+            return GetAsset<AssetManifest>(Assets.AssetsManifestAsset);
         }
 
         public static string GetServerURL()
