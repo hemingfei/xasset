@@ -348,6 +348,7 @@ namespace xasset
     public class SceneAssetAsync : SceneAsset
     {
         private AsyncOperation _request;
+        public AsyncOperation AsyncOperation { get { return _request; } }
 
         public SceneAssetAsync(string path, bool addictive)
             : base(path, addictive)

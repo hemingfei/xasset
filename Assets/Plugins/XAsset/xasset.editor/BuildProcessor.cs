@@ -29,14 +29,17 @@ using System.Diagnostics;
 using System.IO;
 using UnityEditor;
 using UnityEditor.Build;
+using UnityEditor.Build.Reporting;
 using UnityEngine;
 
 namespace xasset.editor
 {
-    public class BuildProcessor : IPreprocessBuild, IPostprocessBuild
+    public class BuildProcessor : IPreprocessBuildWithReport, IPostprocessBuildWithReport
     {
-        public void OnPostprocessBuild(BuildTarget target, string path)
+        public void OnPostprocessBuild(BuildReport report)
         {
+            BuildTarget target = report.summary.platform;
+            string path = report.summary.outputPath;
             if (target != BuildTarget.iOS || Environment.OSVersion.Platform != PlatformID.MacOSX) return;
             var searchPath = Path.Combine(Application.dataPath, "Plugins/XAsset/Editor/Shells");
             var shells = Directory.GetFiles(searchPath, "*.sh", SearchOption.AllDirectories);
@@ -61,7 +64,7 @@ namespace xasset.editor
             Process.Start("/bin/bash", args);
         }
 
-        public void OnPreprocessBuild(BuildTarget target, string path)
+        public void OnPreprocessBuild(BuildReport report)
         {
             BuildScript.CopyAssetBundlesTo(Path.Combine(Application.streamingAssetsPath, Assets.AssetBundles));
             var platformName = BuildScript.GetPlatformName();

@@ -35,6 +35,9 @@ namespace xasset.editor
 {
     public static class MenuItems
     {
+        #region hmf 清除标记
+        private const string ClearAssetsTag = "Assets/AssetBundles/清除标记";
+        #endregion
         private const string KApplyBuildRules = "XAsset/Build Rules";
         private const string KBuildPlayer = "XAsset/Build Player";
         private const string KBuildManifest = "XAsset/Build Manifest";
@@ -193,5 +196,91 @@ namespace xasset.editor
             EditorGUIUtility.systemCopyBuffer = assetPath;
             Debug.Log(assetPath);
         }
+
+        #region hmf 清除标记
+        [MenuItem(ClearAssetsTag)]
+        public static void ClearAssetNameAsFolderName()
+        {
+            string selectPath = Hegametech.Framework.Common.Editor.EditorPathHelper.GetSelectedDirAssetsPath();
+            if (selectPath == null)
+            {
+                return;
+            }
+            AutoClearAssetNameInFolder(selectPath);
+            AssetDatabase.SaveAssets();
+            UnityEngine.Debug.Log("Finish Clear AB Name.");
+        }
+
+        static bool IsAsset(string fileName)
+        {
+            if (fileName.EndsWith(".meta") || fileName.EndsWith(".gaf") || fileName.EndsWith(".DS_Store") || fileName.EndsWith(".cs"))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        // 递归清理文件夹下所有Asset 文件
+        /// </summary>
+        /// <param name="folderPath">Asset目录下文件夹</param>
+        private static void AutoClearAssetNameInFolder(string folderPath)
+        {
+            if (folderPath == null)
+            {
+                UnityEngine.Debug.LogWarning("Folder Path Is Null!");
+                return;
+            }
+            // 清除文件夹的标记
+            {
+                AssetImporter folderAi = AssetImporter.GetAtPath(folderPath);
+                if (folderAi == null)
+                {
+                    UnityEngine.Debug.LogError("Not Find Folder Asset:" + folderPath);
+                }
+                else
+                {
+                    folderAi.assetBundleName = null;
+                }
+            }
+
+            string workPath = Hegametech.Framework.Common.Editor.EditorPathHelper.FullPathToAssetsPath(folderPath);
+            string assetBundleName = null;
+            //处理文件
+            var filePaths = Directory.GetFiles(workPath);
+            for (int i = 0; i < filePaths.Length; ++i)
+            {
+                if (!IsAsset(filePaths[i]))
+                {
+                    continue;
+                }
+
+                string fileName = Path.GetFileName(filePaths[i]);
+
+                string fullFileName = string.Format("{0}/{1}", folderPath, fileName);
+
+                AssetImporter ai = AssetImporter.GetAtPath(fullFileName);
+                if (ai == null)
+                {
+                    UnityEngine.Debug.LogError("Not Find Asset:" + fullFileName);
+                    continue;
+                }
+                else
+                {
+                    ai.assetBundleName = assetBundleName;
+                }
+            }
+
+            //递归处理文件夹
+            var dirs = Directory.GetDirectories(workPath);
+            for (int i = 0; i < dirs.Length; ++i)
+            {
+                string fileName = Path.GetFileName(dirs[i]);
+
+                fileName = string.Format("{0}/{1}", folderPath, fileName);
+                AutoClearAssetNameInFolder(fileName);
+            }
+        }
+        #endregion
     }
 }
