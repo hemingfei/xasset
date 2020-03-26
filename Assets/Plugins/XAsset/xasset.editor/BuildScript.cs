@@ -33,7 +33,7 @@ using System.Net.Sockets;
 using UnityEditor;
 using UnityEngine;
 
-namespace xasset.editor
+namespace libx
 {
     public static class BuildScript
     {
@@ -480,9 +480,9 @@ namespace xasset.editor
             return GetAsset<Settings>(path);
         }
 
-        public static AssetManifest GetManifest()
+        public static Manifest GetManifest()
         {
-            return GetAsset<AssetManifest>(Assets.AssetsManifestAsset);
+            return GetAsset<Manifest>(Assets.AssetsManifestAsset);
         }
 
         public static string GetServerURL()

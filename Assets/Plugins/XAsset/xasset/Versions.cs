@@ -1,5 +1,5 @@
 //
-// VersionManager.cs
+// Versions.cs
 //
 // Author:
 //       fjy <jiyuan.feng@live.com>
@@ -28,9 +28,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-namespace xasset
+namespace libx
 {
-	public static class Versions
+    public static class Versions
 	{
 		public const string versionFile = "download.txt";
 		public const string appVersionFile = "app_ver.txt";

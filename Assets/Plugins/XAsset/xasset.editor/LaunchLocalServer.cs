@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
 
-namespace xasset.editor
+namespace libx
 {
     public class LaunchLocalServer : ScriptableSingleton<LaunchLocalServer>
     {

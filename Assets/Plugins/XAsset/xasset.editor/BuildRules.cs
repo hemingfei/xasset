@@ -30,7 +30,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace xasset.editor
+namespace libx
 {
     [Serializable]
     public class BuildRule

@@ -24,294 +24,541 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using Hegametech.Framework;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using UnityEngine;
 using Debug = UnityEngine.Debug;
+using Object = UnityEngine.Object;
 
-namespace xasset
+namespace libx
 {
-	public delegate UnityEngine.Object LoadDelegate (string path, Type type);
+    public delegate string OverrideDataPathDelegate(string bundleName);
 
-	public delegate string GetPlatformDelegate ();
+    public delegate Object LoadDelegate(string path, Type type);
 
-	[MonoSingletonAttribute("[HE GAME TECH]/Assets")]
-	public class Assets : TMonoSingleton<Assets>
-	{
-		public static Dictionary<string, int> bundleAssets { get { return _bundleAssets; } }
+    public delegate string GetPlatformDelegate();
 
-		public const string AssetBundles = "AssetBundles";
-		public const string AssetsManifestAsset = "Assets/Res/Manifest.asset";
-		public static bool assetBundleMode = true;
-		public static LoadDelegate loadDelegate = null;
-		public static GetPlatformDelegate getPlatformDelegate = null;
+    [Hegametech.Framework.MonoSingletonAttribute("[HE GAME TECH]/Assets")]
+    public class Assets : Hegametech.Framework.TMonoSingleton<Assets>
+    {
+        public static readonly string AssetBundles = "AssetBundles";
 
-		public static string dataPath { get; set; }
+        public static readonly string AssetsManifestAsset = "Assets/Res/Manifest.asset";
 
-		public static string platform { get; private set; }
+        public static OverrideDataPathDelegate OverrideBaseDownloadingUrl;
 
-		public static string assetBundleDataPath { get; private set; }
+        public static bool assetBundleMode = true;
 
-		public static string downloadURL { get; set; }
+        public static LoadDelegate loadDelegate = null;
 
-		public static string assetBundleDataPathURL { get; private set; }
+        public static GetPlatformDelegate getPlatformDelegate = null;
 
-		public static string updatePath { get; private set; }
+        [Conditional("LOG_ENABLE")]
+        private static void Log(string s)
+        {
+            Debug.Log(string.Format("[Assets]{0}", s));
+        }
 
-		private static string[] _bundles = new string[0];
-		private static readonly Dictionary<string, int> _bundleAssets = new Dictionary<string, int> ();
-		private static readonly List<Asset> _assets = new List<Asset> ();
-		private static readonly List<Asset> _unusedAssets = new List<Asset> ();
+        #region API
 
-		private static string GetPlatformForAssetBundles (RuntimePlatform platform)
-		{
-			switch (platform) {
-			case RuntimePlatform.Android:
-				return "Android";
-			case RuntimePlatform.IPhonePlayer:
-				return "iOS";
-			case RuntimePlatform.WebGLPlayer:
-				return "WebGL";
-			case RuntimePlatform.WindowsPlayer:
-			case RuntimePlatform.WindowsEditor:
-				return "Windows";
-			case RuntimePlatform.OSXPlayer:
-			case RuntimePlatform.OSXEditor:
-				return "OSX";
-			default:
-				return null;
-			}
-		}
+        public IEnumerator<string> GetAllBundleAssetPaths() { return _bundleAssets.Keys.GetEnumerator(); }
 
-		public static string GetRelativeUpdatePath (string path)
-		{
-			return updatePath + path;
-		}
+        public static AssetsInitRequest Initialize()
+        {
+            var instance = FindObjectOfType<Assets>();
+            if (instance == null)
+            {
+                instance = Instance;
+            }
 
-		public static string GetDownloadURL (string filename)
-		{
-			return downloadURL + filename;
-		}
+            Log(string.Format("Initialize->assetBundleMode {0}", Assets.assetBundleMode));
 
-		public static string GetAssetBundleDataPathURL (string filename)
-		{
-			return assetBundleDataPathURL + filename;
-		}
+            var protocal = string.Empty;
+            if (Application.platform == RuntimePlatform.IPhonePlayer ||
+                Application.platform == RuntimePlatform.OSXEditor ||
+                Application.platform == RuntimePlatform.WindowsEditor)
+            {
+                protocal = "file://";
+            }
+            else if (Application.platform == RuntimePlatform.OSXPlayer ||
+                     Application.platform == RuntimePlatform.WindowsPlayer)
+            {
+                protocal = "file:///";
+            }
 
-		public static void Initialize (Action onSuccess, Action<string> onError)
-		{
-			var instance = FindObjectOfType<Assets> ();
-			if (instance == null) {
-				instance = Instance;
-			}
+            if (string.IsNullOrEmpty(dataPath))
+                dataPath = Application.streamingAssetsPath;
 
-			InitPaths (); 
+            platform = getPlatformDelegate != null ? getPlatformDelegate() : GetPlatformForAssetBundles(Application.platform);
+            var platformAssetBundle = Path.Combine(AssetBundles, platform);
+            assetBundleDataPath = Path.Combine(dataPath, platformAssetBundle) + Path.DirectorySeparatorChar;
+            assetBundleDataPathURL = protocal + assetBundleDataPath;
+            updatePath = Path.Combine(Application.persistentDataPath, platformAssetBundle) + Path.DirectorySeparatorChar;
 
-			Versions.Load ();
+            Versions.Load();
 
-			Log (Hegametech.Framework.Utility.Text.Format("Initialize->assetBundleMode {0}", Assets.assetBundleMode));
+            var request = new AssetsInitRequest();
+            request.url = "AssetsInitRequest";
+            AddAssetRequest(request);
+            return request;
+        }
 
-			if (Assets.assetBundleMode) {
-				InitBundles (onSuccess, onError);
-			} else {
-				if (onSuccess != null) {
-					onSuccess.Invoke ();
-				}
-			}
-		}
+        public static SceneAssetRequest LoadSceneAsync(string path, bool additive)
+        {
+            var asset = new SceneAssetAsyncRequest(path, additive);
+            asset.Load();
+            asset.Retain();
+            _scenes.Add(asset);
+            return asset;
+        }
 
-		private static void InitBundles (Action onSuccess, Action<string> onError)
-		{
-			Bundles.OverrideBaseDownloadingUrl += Bundles_overrideBaseDownloadingURL;
-			Bundles.Initialize (() => {
-				var asset = LoadAsync (Assets.AssetsManifestAsset, typeof(AssetManifest));
-				asset.completed += obj => {
-					var manifest = obj.asset as AssetManifest;
-					if (manifest == null) {
-						if (onError != null) {
-							onError.Invoke ("manifest == null");
-						}
-						return;
-					}
-					downloadURL = Path.Combine (manifest.downloadURL, platform) + Path.DirectorySeparatorChar;
-					Bundles.activeVariants = manifest.activeVariants;
-					_bundles = manifest.bundles;
-					var dirs = manifest.dirs;
-					_bundleAssets.Clear ();
-					for (int i = 0, max = manifest.assets.Length; i < max; i++) {
-						var item = manifest.assets [i];
-						_bundleAssets [string.Format ("{0}/{1}", dirs [item.dir], item.name)] = item.bundle;
-					}
-					if (onSuccess != null) { 
-						onSuccess.Invoke ();
-					}
-					obj.Release ();
-				};
-			}, onError);
-		}
+        public static void UnloadScene(SceneAssetRequest scene)
+        {
+            scene.Release();
+        }
 
-		private static void InitPaths ()
-		{
-			var protocal = string.Empty;
+        public static AssetRequest LoadAssetAsync(string path, Type type)
+        {
+            return LoadAsset(path, type, true);
+        }
 
-			if (Application.platform == RuntimePlatform.IPhonePlayer ||
-			    Application.platform == RuntimePlatform.OSXEditor ||
-			    Application.platform == RuntimePlatform.WindowsEditor) {
-				protocal = "file://";
-			} else if (Application.platform == RuntimePlatform.OSXPlayer ||
-			           Application.platform == RuntimePlatform.WindowsPlayer) {
-				protocal = "file:///";
-			}
+        public static void Unload(AssetRequest asset) 
+        {
+            asset.Release(); 
+        }
+        #endregion
 
-			if (string.IsNullOrEmpty (dataPath))
-				dataPath = Application.streamingAssetsPath;
+        #region Private
 
-			platform = getPlatformDelegate != null ? getPlatformDelegate () : GetPlatformForAssetBundles (Application.platform);
-			var platformAssetBundle = Path.Combine (AssetBundles, platform);
-			assetBundleDataPath = Path.Combine (dataPath, platformAssetBundle) + Path.DirectorySeparatorChar;
-			assetBundleDataPathURL = protocal + assetBundleDataPath;
-			updatePath = Path.Combine (Application.persistentDataPath, platformAssetBundle) + Path.DirectorySeparatorChar;
-		}
+        internal static void Init(Manifest manifest)
+        {
+            _bundleAssets.Clear();
 
-		public static string[] GetAllDependencies (string path)
-		{
-			string assetBundleName;
-			return GetAssetBundleName (path, out assetBundleName) ? Bundles.GetAllDependencies (assetBundleName) : null;
-		}
+            OverrideBaseDownloadingUrl += Bundles_overrideBaseDownloadingURL;
 
-		public static SceneAsset LoadScene (string path, bool async, bool addictive)
-		{
-			var asset = async ? new SceneAssetAsync (path, addictive) : new SceneAsset (path, addictive);
-			GetAssetBundleName (path, out asset.assetBundleName);
-			asset.Load ();
-			asset.Retain ();
-			_assets.Add (asset);
-			return asset;
-		}
+            downloadURL = Path.Combine(manifest.downloadURL, platform) + Path.DirectorySeparatorChar;
 
-		public static void UnloadScene (string path)
-		{
-			for (int i = 0, max = _assets.Count; i < max; i++) {
-				var item = _assets [i];
-				if (!item.name.Equals (path))
-					continue;
-				Unload (item);
-				break;
-			}
-		}
+            activeVariants = manifest.activeVariants;
 
-		public static Asset Load (string path, Type type)
-		{
-			return Load (path, type, false);
-		}
+            _bundleNames = manifest.bundles;
 
-		public static Asset LoadAsync (string path, Type type)
-		{
-			return Load (path, type, true);
-		}
+            var dirs = manifest.dirs;
 
-		public static void Unload (Asset asset)
-		{
-			asset.Release ();
-			for (var i = 0; i < _unusedAssets.Count; i++) {
-				var item = _unusedAssets [i];
-				if (!item.name.Equals (asset.name))
-					continue;
-				item.Unload ();
-				_unusedAssets.RemoveAt (i);
-				return;
-			}
-		}
+            for (int i = 0, max = manifest.assets.Length; i < max; i++)
+            {
+                var item = manifest.assets[i];
+                _bundleAssets[string.Format("{0}/{1}", dirs[item.dir], item.name)] = item.bundle;
+            }
+        }
 
-		private void Update ()
-		{
-			for (var i = 0; i < _assets.Count; i++) {
-				var item = _assets [i];
-				if (item.Update () || !item.IsUnused ())
-					continue;
-				_unusedAssets.Add (item);
-				_assets.RemoveAt (i);
-				i--;
-			}
+        internal static Dictionary<string, int> _bundleAssets = new Dictionary<string, int>();
 
-			for (var i = 0; i < _unusedAssets.Count; i++) {
-				var item = _unusedAssets [i];
-				item.Unload ();
-				Log(Hegametech.Framework.Utility.Text.Format("Unload-> {0}", item.name));
-			}
+        internal static string[] _bundleNames = new string[0];
 
-			_unusedAssets.Clear ();
+        private static readonly Dictionary<string, AssetRequest> _assets = new Dictionary<string, AssetRequest>();
 
-			Bundles.Update ();
-		}
+        private static readonly List<AssetRequest> _assetRequests = new List<AssetRequest>();
 
-		[Conditional ("LOG_ENABLE")]
-		private static void Log (string s)
-		{
-			Hegametech.Framework.Log.Debug(Hegametech.Framework.Utility.Text.Format("[Assets] {0}", s));
-		}
+        private static List<SceneAssetRequest> _scenes = new List<SceneAssetRequest>();
 
-		private static Asset Load (string path, Type type, bool async)
-		{
-			if (string.IsNullOrEmpty (path)) {
-				Debug.LogError ("invalid path");
-				return null;
-			}
+        private static readonly List<AssetRequest> _unusedAssets = new List<AssetRequest>();
 
-			for (int i = 0, max = _assets.Count; i < max; i++) {
-				var item = _assets [i];
-				if (!item.name.Equals (path))
-					continue;
-				item.Retain ();
-				return item;
-			} 
+        private void Update()
+        {
+            UpdateAssets();
+            UpdateBundles();
+        }
 
-			string assetBundleName;
-			Asset asset;
-			if (GetAssetBundleName (path, out assetBundleName)) {
-				asset = async ? new BundleAssetAsync (assetBundleName) : new BundleAsset (assetBundleName);
-			} else {
-				if (path.StartsWith ("http://", StringComparison.Ordinal) ||
-				    path.StartsWith ("https://", StringComparison.Ordinal) ||
-				    path.StartsWith ("file://", StringComparison.Ordinal) ||
-				    path.StartsWith ("ftp://", StringComparison.Ordinal) ||
-				    path.StartsWith ("jar:file://", StringComparison.Ordinal))
-					asset = new WebAsset ();
-				else
-					asset = new Asset ();
-			}
+        private static void UpdateAssets()
+        {
+            for (int i = 0; i < _assetRequests.Count; ++i)
+            {
+                var request = _assetRequests[i];
+                if (request.Update() || !request.IsUnused())
+                    continue;
+                _unusedAssets.Add(request);
+                _assetRequests.RemoveAt(i);
+                --i;
+            }
 
-			asset.name = path;
-			asset.assetType = type;
-			_assets.Add (asset);
-			asset.Load ();
-			asset.Retain ();
+            for (var i = 0; i < _unusedAssets.Count; ++i)
+            {
+                var request = _unusedAssets[i];
+                _assets.Remove(request.url);
+                request.Unload();
+            }
 
-			Log (Hegametech.Framework.Utility.Text.Format("Load->{0}|{1}", path, assetBundleName));
-			return asset;
-		}
+            _unusedAssets.Clear();
 
-		private static bool GetAssetBundleName (string path, out string assetBundleName)
-		{
-			if (path.Equals (Assets.AssetsManifestAsset)) {
-				assetBundleName = Path.GetFileNameWithoutExtension (path).ToLower ();
-				return true;
-			}
+            for (int i = 0; i < _scenes.Count; ++i)
+            {
+                var request = _scenes[i];
+                if (request.Update() || !request.IsUnused())
+                {
+                    continue;
+                }
+                _scenes.RemoveAt(i);
+                request.Unload();
+                --i;
+            }
+        }
 
-			assetBundleName = null;
-			int bundle;
-			if (!_bundleAssets.TryGetValue (path, out bundle))
-				return false;
-			assetBundleName = _bundles [bundle];
-			return true;
-		}
+        private static void AddAssetRequest(AssetRequest request)
+        {
+            _assets.Add(request.url, request);
+            _assetRequests.Add(request);
+            request.Load();
+        }
 
-		private static string Bundles_overrideBaseDownloadingURL (string bundleName)
-		{
-			return !File.Exists (Assets.GetRelativeUpdatePath (bundleName)) ? null : Assets.updatePath;
-		}
-	}
+        internal static AssetRequest LoadAsset(string path, Type type, bool async)
+        {
+            if (string.IsNullOrEmpty(path))
+            {
+                Debug.LogError("invalid path");
+                return null;
+            }
+
+            AssetRequest request;
+            if (_assets.TryGetValue(path, out request))
+            {
+                request.Retain();
+                return request;
+            }
+
+            string assetBundleName;
+            if (GetAssetBundleName(path, out assetBundleName))
+            {
+                request = async ? new BundleAssetAsyncRequest(assetBundleName) : new BundleAssetRequest(assetBundleName);
+            }
+            else
+            {
+                if (path.StartsWith("http://", StringComparison.Ordinal) ||
+                    path.StartsWith("https://", StringComparison.Ordinal) ||
+                    path.StartsWith("file://", StringComparison.Ordinal) ||
+                    path.StartsWith("ftp://", StringComparison.Ordinal) ||
+                    path.StartsWith("jar:file://", StringComparison.Ordinal))
+                    request = new WebAssetRequest();
+                else
+                    request = new AssetRequest();
+            }
+
+            request.url = path;
+            request.assetType = type;
+            AddAssetRequest(request);
+            request.Retain();
+            Log(string.Format("Load->{0}|{1}", path, assetBundleName));
+            return request;
+        }
+        #endregion
+
+        #region Paths
+
+        public static string dataPath { get; set; }
+
+        public static string platform { get; private set; }
+
+        public static string assetBundleDataPath { get; private set; }
+
+        public static string downloadURL { get; set; }
+
+        public static string assetBundleDataPathURL { get; private set; }
+
+        public static string updatePath { get; private set; }
+
+        private static string GetPlatformForAssetBundles(RuntimePlatform platform)
+        {
+            switch (platform)
+            {
+                case RuntimePlatform.Android:
+                    return "Android";
+                case RuntimePlatform.IPhonePlayer:
+                    return "iOS";
+                case RuntimePlatform.WebGLPlayer:
+                    return "WebGL";
+                case RuntimePlatform.WindowsPlayer:
+                case RuntimePlatform.WindowsEditor:
+                    return "Windows";
+                case RuntimePlatform.OSXPlayer:
+                case RuntimePlatform.OSXEditor:
+                    return "OSX";
+                default:
+                    return null;
+            }
+        }
+
+        public static string GetRelativeUpdatePath(string path)
+        {
+            return updatePath + path;
+        }
+
+        public static string GetDownloadURL(string filename)
+        {
+            return downloadURL + filename;
+        }
+
+        public static string GetAssetBundleDataPathURL(string filename)
+        {
+            return assetBundleDataPathURL + filename;
+        }
+        #endregion
+
+        #region Bundles
+
+        private static readonly int MAX_BUNDLE_LOAD_SIZE_PERFREME = 0;
+
+        private static readonly Dictionary<string, BundleRequest> _bundles = new Dictionary<string, BundleRequest>();
+
+        private static readonly List<BundleRequest> _bundleRequests = new List<BundleRequest>();
+
+        private static readonly List<BundleRequest> _unusedBundles = new List<BundleRequest>();
+
+        private static readonly List<BundleRequest> _bundles2Load = new List<BundleRequest>();
+
+        private static readonly List<BundleRequest> _bundlesByLoading = new List<BundleRequest>();
+
+        internal static string[] activeVariants { get; set; }
+
+        internal static AssetBundleManifest bundleManifest { get; set; }
+
+        internal static bool GetAssetBundleName(string path, out string assetBundleName)
+        {
+            if (path.Equals(Assets.AssetsManifestAsset))
+            {
+                assetBundleName = Path.GetFileNameWithoutExtension(path).ToLower();
+                return true;
+            }
+
+            assetBundleName = null;
+            int bundle;
+            if (!_bundleAssets.TryGetValue(path, out bundle))
+                return false;
+            assetBundleName = _bundleNames[bundle];
+            return true;
+        }
+
+        internal static string Bundles_overrideBaseDownloadingURL(string bundleName)
+        {
+            return !File.Exists(Assets.GetRelativeUpdatePath(bundleName)) ? null : Assets.updatePath;
+        }
+
+        internal static string[] GetAllDependencies(string bundle)
+        {
+            if (bundleManifest == null)
+            {
+                return new string[0];
+            }
+            return bundleManifest.GetAllDependencies(bundle);
+        }
+
+        internal static BundleRequest LoadBundle(string assetBundleName)
+        {
+            return LoadBundle(assetBundleName, false, false);
+        }
+
+        internal static BundleRequest LoadBundleAsync(string assetBundleName)
+        {
+            return LoadBundle(assetBundleName, false, true);
+        }
+
+        internal static void UnloadBundle(BundleRequest bundle)
+        {
+            bundle.Release();
+        }
+
+        internal static void UnloadDependencies(BundleRequest bundle)
+        {
+            for (var i = 0; i < bundle.dependencies.Count; i++)
+            {
+                var item = bundle.dependencies[i];
+                item.Release();
+            }
+
+            bundle.dependencies.Clear();
+        }
+
+        internal static void LoadDependencies(BundleRequest bundle, string assetBundleName, bool asyncRequest)
+        {
+            var dependencies = bundleManifest.GetAllDependencies(assetBundleName);
+            if (dependencies.Length <= 0)
+                return;
+            for (var i = 0; i < dependencies.Length; i++)
+            {
+                var item = dependencies[i];
+                bundle.dependencies.Add(LoadBundle(item, false, asyncRequest));
+            }
+        }
+
+        internal static BundleRequest LoadBundle(string assetBundleName, bool isLoadingAssetBundleManifest, bool asyncMode)
+        {
+            if (string.IsNullOrEmpty(assetBundleName))
+            {
+                Debug.LogError("assetBundleName == null");
+                return null;
+            }
+
+            if (!isLoadingAssetBundleManifest)
+            {
+                if (bundleManifest == null)
+                {
+                    Debug.LogError("Please initialize AssetBundleManifest by calling Bundles.Initialize()");
+                    return null;
+                }
+
+                assetBundleName = RemapVariantName(assetBundleName);
+            }
+
+            var url = GetDataPath(assetBundleName) + assetBundleName;
+
+            BundleRequest bundle;
+
+            if (_bundles.TryGetValue(url, out bundle))
+            {
+                bundle.Retain();
+                return bundle;
+            }
+
+            if (url.StartsWith("http://", StringComparison.Ordinal) ||
+                url.StartsWith("https://", StringComparison.Ordinal) ||
+                url.StartsWith("file://", StringComparison.Ordinal) ||
+                url.StartsWith("ftp://", StringComparison.Ordinal))
+                bundle = new WebBundleRequest
+                {
+                    hash = bundleManifest != null ? bundleManifest.GetAssetBundleHash(assetBundleName) : new Hash128(),
+                    cache = !isLoadingAssetBundleManifest
+                };
+            else
+                bundle = asyncMode ? new BundleAsyncRequest() : new BundleRequest();
+
+            bundle.url = url;
+
+            _bundles.Add(url, bundle);
+
+            _bundleRequests.Add(bundle);
+
+            if (MAX_BUNDLE_LOAD_SIZE_PERFREME > 0 && (bundle is BundleAsyncRequest || bundle is WebBundleRequest))
+            {
+                _bundles2Load.Add(bundle);
+            }
+            else
+            {
+                bundle.Load();
+                Log("LoadBundle: " + url);
+            }
+
+            if (!isLoadingAssetBundleManifest)
+                LoadDependencies(bundle, assetBundleName, asyncMode);
+
+            bundle.Retain();
+            return bundle;
+        }
+
+        internal static string GetDataPath(string bundleName)
+        {
+            if (OverrideBaseDownloadingUrl == null)
+                return Assets.assetBundleDataPath;
+            foreach (var @delegate in OverrideBaseDownloadingUrl.GetInvocationList())
+            {
+                var method = (OverrideDataPathDelegate)@delegate;
+                var res = method(bundleName);
+                if (res != null)
+                    return res;
+            }
+
+            return Assets.assetBundleDataPath;
+        }
+
+        internal static void UpdateBundles()
+        {
+            if (MAX_BUNDLE_LOAD_SIZE_PERFREME > 0)
+            {
+                if (_bundles2Load.Count > 0 && _bundlesByLoading.Count < MAX_BUNDLE_LOAD_SIZE_PERFREME)
+                {
+                    for (int i = 0; i < Math.Min(MAX_BUNDLE_LOAD_SIZE_PERFREME - _bundlesByLoading.Count, _bundles2Load.Count); ++i)
+                    {
+                        var item = _bundles2Load[i];
+                        if (item.loadState == LoadState.Init)
+                        {
+                            item.Load();
+                            _bundlesByLoading.Add(item);
+                            _bundles2Load.RemoveAt(i);
+                            --i;
+                        }
+                    }
+                }
+
+                for (int i = 0; i < _bundlesByLoading.Count; ++i)
+                {
+                    var item = _bundlesByLoading[i];
+                    if (item.loadState == LoadState.Loaded || item.loadState == LoadState.Unload)
+                    {
+                        _bundlesByLoading.RemoveAt(i);
+                        --i;
+                    }
+                }
+            }
+
+            for (int i = 0; i < _bundleRequests.Count; i++)
+            {
+                BundleRequest item = _bundleRequests[i];
+                if (item.Update() || !item.IsUnused())
+                    continue;
+                _unusedBundles.Add(item);
+                _bundleRequests.RemoveAt(i);
+                --i;
+            }
+
+            for (var i = 0; i < _unusedBundles.Count; i++)
+            {
+                var item = _unusedBundles[i];
+                _bundles.Remove(item.url);
+                UnloadDependencies(item);
+                item.Unload();
+                Log("UnloadBundle: " + item.url);
+            }
+
+            _unusedBundles.Clear();
+        }
+
+        internal static string RemapVariantName(string assetBundleName)
+        {
+            var bundlesWithVariant = bundleManifest.GetAllAssetBundlesWithVariant();
+
+            // Get base bundle name
+            var baseName = assetBundleName.Split('.')[0];
+
+            var bestFit = int.MaxValue;
+            var bestFitIndex = -1;
+            // Loop all the assetBundles with variant to find the best fit variant assetBundle.
+            for (var i = 0; i < bundlesWithVariant.Length; i++)
+            {
+                var curSplit = bundlesWithVariant[i].Split('.');
+                var curBaseName = curSplit[0];
+                var curVariant = curSplit[1];
+
+                if (curBaseName != baseName)
+                    continue;
+
+                var found = Array.IndexOf(activeVariants, curVariant);
+
+                // If there is no active variant found. We still want to use the first
+                if (found == -1)
+                    found = int.MaxValue - 1;
+
+                if (found >= bestFit)
+                    continue;
+                bestFit = found;
+                bestFitIndex = i;
+            }
+
+            if (bestFit == int.MaxValue - 1)
+                Debug.LogWarning(
+                    "Ambiguous asset bundle variant chosen because there was no matching active variant: " +
+                    bundlesWithVariant[bestFitIndex]);
+
+            return bestFitIndex != -1 ? bundlesWithVariant[bestFitIndex] : assetBundleName;
+        }
+        #endregion 
+    }
 }

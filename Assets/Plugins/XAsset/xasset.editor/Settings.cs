@@ -26,7 +26,7 @@
 
 using UnityEngine;
 
-namespace xasset.editor
+namespace libx
 {
     public class Settings : ScriptableObject
     {

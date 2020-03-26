@@ -1,7 +1,7 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 
-namespace xasset.editor
+namespace libx
 {
     public class EditorRuntimeInitializeOnLoad
     {

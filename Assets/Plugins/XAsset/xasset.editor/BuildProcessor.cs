@@ -32,7 +32,7 @@ using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
 
-namespace xasset.editor
+namespace libx
 {
     public class BuildProcessor : IPreprocessBuildWithReport, IPostprocessBuildWithReport
     {

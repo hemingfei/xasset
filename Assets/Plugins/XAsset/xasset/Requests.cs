@@ -1,5 +1,5 @@
 //
-// Asset.cs
+// Requests.cs
 //
 // Author:
 //       fjy <jiyuan.feng@live.com>
@@ -29,14 +29,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-#if UNITY_2018_3_OR_NEWER
 using UnityEngine.Networking;
-#endif
 using UnityEngine.SceneManagement;
 using Debug = UnityEngine.Debug;
 using Object = UnityEngine.Object;
 
-namespace xasset
+namespace libx
 {
     public enum LoadState
     {
@@ -47,14 +45,14 @@ namespace xasset
         Unload,
     }
 
-    public class Asset : Reference, IEnumerator
+    public class AssetRequest : Reference, IEnumerator
     {
         private List<Object> _requires;
         public Type assetType;
-        public string name;
+        public string url;
         public LoadState loadState { get; protected set; }
 
-        public Asset()
+        public AssetRequest()
         {
             asset = null;
             loadState = LoadState.Init;
@@ -106,10 +104,10 @@ namespace xasset
         internal virtual void Load()
         {
             if (!Assets.assetBundleMode && Assets.loadDelegate != null)
-                asset = Assets.loadDelegate(name, assetType);
+                asset = Assets.loadDelegate(url, assetType);
             if (asset == null)
             {
-                error = "error! file not exist:" + name;
+                error = "error! file not exist:" + url;
             }
         }
 
@@ -148,7 +146,7 @@ namespace xasset
             return false;
         }
 
-        public event Action<Asset> completed;
+        public Action<AssetRequest> completed;
 
         #region IEnumerator implementation
 
@@ -169,20 +167,109 @@ namespace xasset
         #endregion
     }
 
-    public class BundleAsset : Asset
+    public class AssetsInitRequest : AssetRequest
+    {
+        public override float progress
+        {
+            get
+            {
+                switch (loadState)
+                {
+                    case LoadState.LoadAsset:
+                        return 0.5f;
+
+                    case LoadState.Loaded:
+                        return 1f;
+                    default:
+                        break;
+                }
+                return string.IsNullOrEmpty(error) ? 1f : 0f;
+            }
+        }
+
+        public override bool isDone
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(error))
+                {
+                    return true;
+                }
+                return loadState == LoadState.Loaded;
+            }
+        }
+
+        internal override void Load()
+        {
+            if (Assets.assetBundleMode)
+            {
+                var bundleRequest = Assets.LoadBundle(Assets.platform, true, true);
+                loadState = LoadState.LoadAssetBundle;
+                bundleRequest.completed = BundleRequest_completed;
+            }
+            else
+            {
+                loadState = LoadState.Loaded;
+            }
+        }
+
+        private void BundleRequest_completed(AssetRequest request)
+        {
+            var bundleRequest = request as BundleRequest;
+            var manifest = bundleRequest.assetBundle.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+            if (manifest == null)
+            {
+                error = "AssetBundleManifest == null";
+                bundleRequest.Release();
+                return;
+            }
+            else
+            {
+                Assets.bundleManifest = manifest;
+                bundleRequest.assetBundle.Unload(false);
+                bundleRequest.assetBundle = null;
+                var assetRequest = Assets.LoadAssetAsync(Assets.AssetsManifestAsset, typeof(Manifest));
+                assetRequest.completed = AssetRequest_completed;
+                loadState = LoadState.LoadAsset;
+                bundleRequest.Release();
+            }
+        }
+
+        private void AssetRequest_completed(AssetRequest request)
+        {
+            var manifest = request.asset as Manifest;
+            if (manifest == null)
+            {
+                error = "manifest == null";
+            }
+            else
+            {
+                Assets.Init(manifest);
+            }
+            request.Release();
+            loadState = LoadState.Loaded;
+        }
+
+        internal override void Unload()
+        {
+
+        }
+    }
+
+    public class BundleAssetRequest : AssetRequest
     {
         protected readonly string assetBundleName;
-        protected Bundle bundle;
+        protected BundleRequest bundle;
 
-        public BundleAsset(string bundle)
+        public BundleAssetRequest(string bundle)
         {
             assetBundleName = bundle;
         }
 
         internal override void Load()
         {
-            bundle = Bundles.Load(assetBundleName);
-            var assetName = Path.GetFileName(name);
+            bundle = Assets.LoadBundle(assetBundleName);
+            var assetName = Path.GetFileName(url);
             asset = bundle.assetBundle.LoadAsset(assetName, assetType);
         }
 
@@ -198,11 +285,11 @@ namespace xasset
         }
     }
 
-    public class BundleAssetAsync : BundleAsset
+    public class BundleAssetAsyncRequest : BundleAssetRequest
     {
         private AssetBundleRequest _request;
 
-        public BundleAssetAsync(string bundle)
+        public BundleAssetAsyncRequest(string bundle)
             : base(bundle)
         {
         }
@@ -245,7 +332,7 @@ namespace xasset
                                 return true;
                             }
 
-                            var assetName = Path.GetFileName(name);
+                            var assetName = Path.GetFileName(url);
                             _request = bundle.assetBundle.LoadAssetAsync(assetName, assetType);
                             loadState = LoadState.LoadAsset;
                             break;
@@ -288,7 +375,7 @@ namespace xasset
 
         internal override void Load()
         {
-            bundle = Bundles.LoadAsync(assetBundleName);
+            bundle = Assets.LoadBundleAsync(assetBundleName);
             loadState = LoadState.LoadAssetBundle;
         }
 
@@ -300,17 +387,18 @@ namespace xasset
         }
     }
 
-    public class SceneAsset : Asset
+    public class SceneAssetRequest : AssetRequest
     {
         protected readonly LoadSceneMode loadSceneMode;
         protected readonly string sceneName;
         public string assetBundleName;
-        protected Bundle bundle;
+        protected BundleRequest bundle;
 
-        public SceneAsset(string path, bool addictive)
+        public SceneAssetRequest(string path, bool addictive)
         {
-            name = path;
-            sceneName = Path.GetFileNameWithoutExtension(name);
+            base.url = path;
+            Assets.GetAssetBundleName(path, out assetBundleName);
+            sceneName = Path.GetFileNameWithoutExtension(base.url);
             loadSceneMode = addictive ? LoadSceneMode.Additive : LoadSceneMode.Single;
         }
 
@@ -323,7 +411,7 @@ namespace xasset
         {
             if (!string.IsNullOrEmpty(assetBundleName))
             {
-                bundle = Bundles.Load(assetBundleName);
+                bundle = Assets.LoadBundle(assetBundleName);
                 if (bundle != null)
                     SceneManager.LoadScene(sceneName, loadSceneMode);
             }
@@ -338,19 +426,21 @@ namespace xasset
             if (bundle != null)
                 bundle.Release();
 
-            if (SceneManager.GetSceneByName(sceneName).isLoaded)
-                SceneManager.UnloadSceneAsync(sceneName);
+            if (loadSceneMode == LoadSceneMode.Additive)
+            {
+                if (SceneManager.GetSceneByName(sceneName).isLoaded)
+                    SceneManager.UnloadSceneAsync(sceneName);
+            }
 
             bundle = null;
         }
     }
 
-    public class SceneAssetAsync : SceneAsset
+    public class SceneAssetAsyncRequest : SceneAssetRequest
     {
         private AsyncOperation _request;
-        public AsyncOperation AsyncOperation { get { return _request; } }
 
-        public SceneAssetAsync(string path, bool addictive)
+        public SceneAssetAsyncRequest(string path, bool addictive)
             : base(path, addictive)
         {
         }
@@ -431,7 +521,7 @@ namespace xasset
         {
             if (!string.IsNullOrEmpty(assetBundleName))
             {
-                bundle = Bundles.LoadAsync(assetBundleName);
+                bundle = Assets.LoadBundleAsync(assetBundleName);
                 loadState = LoadState.LoadAssetBundle;
             }
             else
@@ -448,13 +538,10 @@ namespace xasset
         }
     }
 
-    public class WebAsset : Asset
+    public class WebAssetRequest : AssetRequest
     {
-#if UNITY_2018_3_OR_NEWER
         private UnityWebRequest _www;
-#else
-        private WWW _www;
-#endif
+
 
         public override bool isDone
         {
@@ -472,7 +559,6 @@ namespace xasset
 
                     if (_www.isDone)
                     {
-#if UNITY_2018_3_OR_NEWER
                         if (assetType != typeof(Texture2D))
                         {
                             if (assetType != typeof(TextAsset))
@@ -491,26 +577,6 @@ namespace xasset
                         {
                             asset = DownloadHandlerTexture.GetContent(_www);
                         }
-#else
-                        if (assetType != typeof(Texture2D))
-                        {
-                            if (assetType != typeof(TextAsset))
-                            {
-                                if (assetType != typeof(AudioClip))
-                                    bytes = _www.bytes;
-                                else
-                                    asset = _www.GetAudioClip();
-                            }
-                            else
-                            {
-                                text = _www.text;
-                            }
-                        }
-                        else
-                        {
-                            asset = _www.texture;
-                        }
-#endif
                         loadState = LoadState.Loaded;
                         return true;
                     }
@@ -528,33 +594,25 @@ namespace xasset
 
         public override float progress
         {
-#if UNITY_2018_3_OR_NEWER
             get { return _www.downloadProgress; }
-#else
-            get { return _www.progress; }
-#endif
         }
 
         internal override void Load()
         {
-#if UNITY_2018_3_OR_NEWER
             if (assetType == typeof(AudioClip))
             {
-                _www = UnityWebRequestMultimedia.GetAudioClip(name, AudioType.WAV);
+                _www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.WAV);
             }
             else if (assetType == typeof(Texture2D))
             {
-                _www = UnityWebRequestTexture.GetTexture(name);
+                _www = UnityWebRequestTexture.GetTexture(url);
             }
             else
             {
-                _www = new UnityWebRequest(name);
+                _www = new UnityWebRequest(url);
                 _www.downloadHandler = new DownloadHandlerBuffer();
             }
             _www.SendWebRequest();
-#else
-            _www = new WWW(name);
-#endif
             loadState = LoadState.LoadAsset;
         }
 
@@ -570,6 +628,143 @@ namespace xasset
 
             bytes = null;
             text = null;
+        }
+    }
+
+    public class BundleRequest : AssetRequest
+    {
+        public readonly List<BundleRequest> dependencies = new List<BundleRequest>();
+
+        public AssetBundle assetBundle
+        {
+            get { return asset as AssetBundle; }
+            internal set { asset = value; }
+        }
+
+        internal override void Load()
+        {
+            asset = AssetBundle.LoadFromFile(url);
+            if (assetBundle == null)
+                error = url + " LoadFromFile failed.";
+        }
+
+        internal override void Unload()
+        {
+            if (assetBundle == null)
+                return;
+            assetBundle.Unload(true);
+            assetBundle = null;
+        }
+    }
+
+    public class BundleAsyncRequest : BundleRequest
+    {
+        private AssetBundleCreateRequest _request;
+
+        public override bool isDone
+        {
+            get
+            {
+                if (loadState == LoadState.Init)
+                    return false;
+
+                if (loadState == LoadState.Loaded)
+                    return true;
+
+                if (loadState == LoadState.LoadAssetBundle && _request.isDone)
+                {
+                    asset = _request.assetBundle;
+                    if (_request.assetBundle == null)
+                    {
+                        error = string.Format("unable to load assetBundle:{0}", url);
+                    }
+                    loadState = LoadState.Loaded;
+                }
+
+                return _request == null || _request.isDone;
+            }
+        }
+
+        public override float progress
+        {
+            get { return _request != null ? _request.progress : 0f; }
+        }
+
+        internal override void Load()
+        {
+            _request = AssetBundle.LoadFromFileAsync(url);
+            if (_request == null)
+            {
+                error = url + " LoadFromFile failed.";
+                return;
+            }
+            loadState = LoadState.LoadAssetBundle;
+        }
+
+        internal override void Unload()
+        {
+            if (_request != null)
+            {
+                _request = null;
+            }
+            loadState = LoadState.Unload;
+            base.Unload();
+        }
+    }
+
+    public class WebBundleRequest : BundleRequest
+    {
+        private UnityWebRequest _request;
+        public bool cache;
+        public Hash128 hash;
+
+        public override string error
+        {
+            get { return _request != null ? _request.error : null; }
+        }
+
+        public override bool isDone
+        {
+            get
+            {
+                if (loadState == LoadState.Init)
+                    return false;
+
+                if (_request == null || loadState == LoadState.Loaded)
+                    return true;
+
+                if (_request.isDone)
+                {
+                    assetBundle = DownloadHandlerAssetBundle.GetContent(_request);
+                    loadState = LoadState.Loaded;
+                }
+
+                return _request.isDone;
+            }
+        }
+
+        public override float progress
+        {
+            get { return _request != null ? _request.downloadProgress : 0f; }
+        }
+
+        internal override void Load()
+        {
+            _request = cache ? UnityWebRequestAssetBundle.GetAssetBundle(url, hash, 0) : UnityWebRequestAssetBundle.GetAssetBundle(url);
+            _request.SendWebRequest();
+            loadState = LoadState.LoadAssetBundle;
+
+        }
+
+        internal override void Unload()
+        {
+            if (_request != null)
+            {
+                _request.Dispose();
+                _request = null;
+            }
+            loadState = LoadState.Unload;
+            base.Unload();
         }
     }
 }

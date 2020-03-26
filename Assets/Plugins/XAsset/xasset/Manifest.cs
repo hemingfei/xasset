@@ -27,7 +27,7 @@
 using System;
 using UnityEngine;
 
-namespace xasset
+namespace libx
 {
     [Serializable]
     public class AssetRef
@@ -37,7 +37,7 @@ namespace xasset
         public string name;
     }
 
-    public class AssetManifest : ScriptableObject
+    public class Manifest : ScriptableObject
     {
         public string downloadURL = "";
         public string[] activeVariants = new string[0];
