@@ -92,9 +92,14 @@ namespace libx
         {
             return null;
         }
-
+        [Obsolete("Use ReceiveContentLengthHeader")]
         protected override void ReceiveContentLength(int contentLength)
         {
+        }
+
+        protected override void ReceiveContentLengthHeader(ulong contentLength)
+        {
+
         }
 
         protected override bool ReceiveData(byte[] buffer, int dataLength)
