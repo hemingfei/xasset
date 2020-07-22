@@ -3,8 +3,9 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -19,7 +20,7 @@ MonoBehaviour:
   searchPatternPrefab: '*.prefab'
   searchPatternScene: '*.unity'
   searchPatternText: '*.txt,*.bytes,*.json,*.csv,*.xml,*htm,*.html,*.yaml,*.fnt'
-  version: 10
+  version: 11
   scenesInBuild:
   - {fileID: 102900000, guid: d378f07356e960549add8141397b1462, type: 3}
   - {fileID: 102900000, guid: 41515a2b3f98a445e88e746ac77f43d1, type: 3}
@@ -33,1334 +34,1334 @@ MonoBehaviour:
     nameBy: 1
     assetBundleName: 
   ruleAssets:
-  - bundle: assets/xasset/demo/scenes/game.unity.unity3d
+  - bundle: b26a9bac179b4418b47a45737a4c6673.unity3d
     path: Assets/XAsset/Demo/Scenes/Game.unity
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Btn_Buy1_h.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Btn_Buy1_n.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Btn_Buy1_p.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Btn_Role_h.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Btn_Role_n.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Btn_Role_p.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Icon_Money.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Icon_Role.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Icon_Role1.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Icon_Role2.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Icon_Role3.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Icon_Role4.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Icon_Skill.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Icon_Skill1.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Icon_Skill2.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Icon_Skill3.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Panel1.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Partition line.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/ProgressBar_Attack.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/ProgressBar_Defense.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/ProgressBar_Speed.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Stage light01.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Stage light02.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Stage light03.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Stage_bg01.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Stage_bg02.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/Stage_bg03.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/bg_CHARACTOR.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/bg_ProgressBar_Attack.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/bg_RECHARGE.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/bg_RoleBackground.png
-  - bundle: assets/xasset/demo/ui/10character.unity3d
+  - bundle: 4a668588d6510f5f0943d60252ce18cd.unity3d
     path: Assets/XAsset/Demo/UI/10Character/bg_describtion.png
-  - bundle: assets/xasset/demo/ui/11notenoughmoney.unity3d
+  - bundle: d76d7f89666b4f98f2723d5f3f9043a3.unity3d
     path: Assets/XAsset/Demo/UI/11NotEnoughMoney/Btn_Buy_h.png
-  - bundle: assets/xasset/demo/ui/11notenoughmoney.unity3d
+  - bundle: d76d7f89666b4f98f2723d5f3f9043a3.unity3d
     path: Assets/XAsset/Demo/UI/11NotEnoughMoney/Btn_Buy_n.png
-  - bundle: assets/xasset/demo/ui/11notenoughmoney.unity3d
+  - bundle: d76d7f89666b4f98f2723d5f3f9043a3.unity3d
     path: Assets/XAsset/Demo/UI/11NotEnoughMoney/Btn_Buy_p.png
-  - bundle: assets/xasset/demo/ui/11notenoughmoney.unity3d
+  - bundle: d76d7f89666b4f98f2723d5f3f9043a3.unity3d
     path: Assets/XAsset/Demo/UI/11NotEnoughMoney/bg_NotEnoughMoney.png
-  - bundle: assets/xasset/demo/ui/11notenoughmoney.unity3d
+  - bundle: d76d7f89666b4f98f2723d5f3f9043a3.unity3d
     path: Assets/XAsset/Demo/UI/11NotEnoughMoney/bg_black.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Btn_Buy2_h.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Btn_Buy2_n.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Btn_Buy2_p.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Btn_Buy_Yellow_h.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Btn_Buy_Yellow_n.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Btn_Buy_Yellow_p.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Icon_Coins.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Icon_Emerald.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Icon_Gems.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Icon_Sale.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Icon_dolor.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Radiated light1.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/Radiated light2.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/bg_BuyCoins.png
-  - bundle: assets/xasset/demo/ui/12recharge.unity3d
+  - bundle: 72c31fb04179923b119e43dc7c11fee8.unity3d
     path: Assets/XAsset/Demo/UI/12Recharge/bg_BuyCoins2.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/1st.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/2st.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/3rd.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/Btn_Tab1_n.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/Btn_Tab1_s.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/Icon_Role1.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/Icon_Role2.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/Icon_Role3.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/Icon_Role4.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/bg_Ranking.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/bg_Ranking1.png
-  - bundle: assets/xasset/demo/ui/13ranking.unity3d
+  - bundle: 36b74253533cd801f2efc42fbd2e2959.unity3d
     path: Assets/XAsset/Demo/UI/13Ranking/bg_TitleRanking.png
-  - bundle: assets/xasset/demo/ui/14pause.unity3d
+  - bundle: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     path: Assets/XAsset/Demo/UI/14Pause/Btn_Continue0_h.png
-  - bundle: assets/xasset/demo/ui/14pause.unity3d
+  - bundle: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     path: Assets/XAsset/Demo/UI/14Pause/Btn_Continue0_n.png
-  - bundle: assets/xasset/demo/ui/14pause.unity3d
+  - bundle: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     path: Assets/XAsset/Demo/UI/14Pause/Btn_Continue0_p.png
-  - bundle: assets/xasset/demo/ui/14pause.unity3d
+  - bundle: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     path: Assets/XAsset/Demo/UI/14Pause/Btn_Continue_h.png
-  - bundle: assets/xasset/demo/ui/14pause.unity3d
+  - bundle: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     path: Assets/XAsset/Demo/UI/14Pause/Btn_Continue_n.png
-  - bundle: assets/xasset/demo/ui/14pause.unity3d
+  - bundle: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     path: Assets/XAsset/Demo/UI/14Pause/Btn_Continue_p.png
-  - bundle: assets/xasset/demo/ui/14pause.unity3d
+  - bundle: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     path: Assets/XAsset/Demo/UI/14Pause/PAUSE.png
-  - bundle: assets/xasset/demo/ui/14pause.unity3d
+  - bundle: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     path: Assets/XAsset/Demo/UI/14Pause/TitleLine_Left.png
-  - bundle: assets/xasset/demo/ui/14pause.unity3d
+  - bundle: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     path: Assets/XAsset/Demo/UI/14Pause/TitleLine_Right.png
-  - bundle: assets/xasset/demo/ui/14pause.unity3d
+  - bundle: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     path: Assets/XAsset/Demo/UI/14Pause/bg_black.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Btn_Previous1_h.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Btn_Previous1_n.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Btn_Previous1_p.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Btn_Tab1_n.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Btn_Tab1_s.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Btn_slider1.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Dropdown_Btn_h.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Dropdown_Btn_n.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Dropdown_Btn_p.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Dropdown_bg_n.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Dropdown_bg_s.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Dropdown_menu.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Dropdown_menu_bg.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Icon_Music.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Icon_Sound.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Partition line.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Radio_null.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Radio_selected.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Slider2.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Slider2_Btn.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Slider2_bg.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/Window_Settings.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/bg_LeftTab.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/bg_SettingsTitle.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/bg_Title line.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/bg_black.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/bg_slider1.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/checkbox_normal.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/checkbox_select.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/slider1.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/switch01-off.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/switch01-on.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/switch02-off.png
-  - bundle: assets/xasset/demo/ui/15opotions.unity3d
+  - bundle: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     path: Assets/XAsset/Demo/UI/15Opotions/switch02-on.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Btn_Next_h.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Btn_Next_n.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Btn_Next_p.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Btn_Restart_h.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Btn_Restart_n.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Btn_Restart_p.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Icon_Potion.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Icon_Ring.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Icon_Shield.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Icon_SmallStar_Gray.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Icon_SmallStar_Light.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Icon_reward.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Icon_star1_gray.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Icon_star1_light.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Light line.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Lights1.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/Lights2.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/ProgressLv.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/bg_ProgressLv.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/bg_Victory1.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/bg_Victory2.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/bg_block.png
-  - bundle: assets/xasset/demo/ui/16victory1.unity3d
+  - bundle: 43037a82c34a66c3cfade923078202fa.unity3d
     path: Assets/XAsset/Demo/UI/16Victory1/title_Victory.png
-  - bundle: assets/xasset/demo/ui/17victory2.unity3d
+  - bundle: f06980f5b57ce4f072e223f58ddf3bff.unity3d
     path: Assets/XAsset/Demo/UI/17Victory2/VICTORY.png
-  - bundle: assets/xasset/demo/ui/17victory2.unity3d
+  - bundle: f06980f5b57ce4f072e223f58ddf3bff.unity3d
     path: Assets/XAsset/Demo/UI/17Victory2/bg_Victory.png
-  - bundle: assets/xasset/demo/ui/18warning.unity3d
+  - bundle: f7a9e454952200090e54c3c1aa63eabd.unity3d
     path: Assets/XAsset/Demo/UI/18Warning/Btn_RedOk_h.png
-  - bundle: assets/xasset/demo/ui/18warning.unity3d
+  - bundle: f7a9e454952200090e54c3c1aa63eabd.unity3d
     path: Assets/XAsset/Demo/UI/18Warning/Btn_RedOk_n.png
-  - bundle: assets/xasset/demo/ui/18warning.unity3d
+  - bundle: f7a9e454952200090e54c3c1aa63eabd.unity3d
     path: Assets/XAsset/Demo/UI/18Warning/Btn_RedOk_p.png
-  - bundle: assets/xasset/demo/ui/18warning.unity3d
+  - bundle: f7a9e454952200090e54c3c1aa63eabd.unity3d
     path: Assets/XAsset/Demo/UI/18Warning/bg_Warning.png
-  - bundle: assets/xasset/demo/ui/18warning.unity3d
+  - bundle: f7a9e454952200090e54c3c1aa63eabd.unity3d
     path: Assets/XAsset/Demo/UI/18Warning/bg_WarningTitle.png
-  - bundle: assets/xasset/demo/ui/18warning.unity3d
+  - bundle: f7a9e454952200090e54c3c1aa63eabd.unity3d
     path: Assets/XAsset/Demo/UI/18Warning/bg_Warning_Red.png
-  - bundle: assets/xasset/demo/ui/19died.unity3d
+  - bundle: f1b506cf4bdcb530ccc230de9996dfbc.unity3d
     path: Assets/XAsset/Demo/UI/19Died/Icon_Died.png
-  - bundle: assets/xasset/demo/ui/1loadingpage.unity3d
+  - bundle: fdf89e8c87f40d9d2d85581df966f861.unity3d
     path: Assets/XAsset/Demo/UI/1LoadingPage/Progress1.png
-  - bundle: assets/xasset/demo/ui/1loadingpage.unity3d
+  - bundle: fdf89e8c87f40d9d2d85581df966f861.unity3d
     path: Assets/XAsset/Demo/UI/1LoadingPage/Progress2.png
-  - bundle: assets/xasset/demo/ui/1loadingpage.unity3d
+  - bundle: fdf89e8c87f40d9d2d85581df966f861.unity3d
     path: Assets/XAsset/Demo/UI/1LoadingPage/Title2_bg.png
-  - bundle: assets/xasset/demo/ui/1loadingpage.unity3d
+  - bundle: fdf89e8c87f40d9d2d85581df966f861.unity3d
     path: Assets/XAsset/Demo/UI/1LoadingPage/bg_Progress.png
-  - bundle: assets/xasset/demo/ui/20gameover.unity3d
+  - bundle: c4f8a957bb7d46fa53f3f9e4c65d37ab.unity3d
     path: Assets/XAsset/Demo/UI/20GameOver/GAME OVER.png
-  - bundle: assets/xasset/demo/ui/20gameover.unity3d
+  - bundle: c4f8a957bb7d46fa53f3f9e4c65d37ab.unity3d
     path: Assets/XAsset/Demo/UI/20GameOver/GameOver.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Btn_Character_h.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Btn_Character_n.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Btn_Character_p.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Btn_MainMenu_h.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Btn_MainMenu_n.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Btn_MainMenu_p.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Btn_User_h.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Btn_User_n.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Btn_User_p.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Icon_Character.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Icon_Ranking.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Icon_Recharge.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Icon_Shop.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Icon_User.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Sci-fi Circle_Large Line.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Sci-fi Circle_Large stars.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Sci-fi-Circle_Large1.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Sci-fi-Circle_Large2.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Sci-fi-Circle_Large3.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/Sci-fi-Circle_Large4.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/bg_Title.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/bg_Title1.png
-  - bundle: assets/xasset/demo/ui/2mainmenu.unity3d
+  - bundle: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     path: Assets/XAsset/Demo/UI/2MainMenu/bg_Title2 .png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/Battlefield 2.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/Btn_Next_h.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/Btn_Next_n.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/Btn_Next_p.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/Btn_Previous_h.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/Btn_Previous_n.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/Btn_Previous_p.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/Radio1_null.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/Radio1_select.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/bg_Name1.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/bg_Stage1_01.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/bg_Stage1_02.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/bg_Stage2_01.png
-  - bundle: assets/xasset/demo/ui/3stageselect.unity3d
+  - bundle: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     path: Assets/XAsset/Demo/UI/3StageSelect/bg_Stage2_02.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_GoBack.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_GoBack1_h.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_GoBack1_n.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_GoBack1_p.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_GoBack2_h.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_GoBack2_n.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_GoBack2_p.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_Level Locked.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_Level1_h.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_Level1_n.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_Level1_p.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_Level2_h.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_Level2_n.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Btn_Level2_p.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Icon_Lock0.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Icon_Role.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Icon_Settings.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Icon_star0.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Level star_Gray.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Level star_Light.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Progress-bar_Energy.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/Progress-bar_life.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/bg_EnergyProgress bar.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/bg_LifeProgress bar.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/bg_RoleDown.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/bg_RoleUp.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/checkbox_nul.png
-  - bundle: assets/xasset/demo/ui/4levels.unity3d
+  - bundle: 8bb7326338246b283383d10d46e62f7f.unity3d
     path: Assets/XAsset/Demo/UI/4Levels/checkbox_select.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/Btn_LOGIN_h.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/Btn_LOGIN_n.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/Btn_LOGIN_p.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/Icon_Password.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/Icon_Password1.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/Icon_UserName.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/Icon_UserName1.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/Window_Login.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/bg_Input0_n.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/bg_Input0_s .png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/bg_Input1_n.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/bg_Input1_s .png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/bg_Input2_n.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/bg_Input2_s.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/bg_black.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/checkbox_nul.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/checkbox_select.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/close_hover.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/close_normal.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/close_pressed.png
-  - bundle: assets/xasset/demo/ui/5login1.unity3d
+  - bundle: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     path: Assets/XAsset/Demo/UI/5Login1/line.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Add_h.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Add_n.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Add_p.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Attack_h.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Attack_n.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Attack_p.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Down_h.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Down_n.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Down_p.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Guns_n.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Guns_s.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Left_h.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Left_n.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Left_p.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_OpenArrow.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Right_h.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Right_n.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Right_p.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Skill_h.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Skill_n.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Skill_p.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Up_h.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Up_n.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_Up_p.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_pause_h.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_pause_n.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Btn_pause_p.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Bullet.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Circle_Black Mask.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Circle_Progress.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Add1.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_AtackTarget.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Diamond.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Diamond1.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_DistanceTarget.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Gun1.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Light.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Money.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Money1.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Skill1.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Skill2.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Skill3.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Sword.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Sword1.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Icon_Target.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/TargetGreen.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/TargetRed.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/Tips.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/bg_Direction1.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/bg_Direction2.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/bg_Map.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/bg_MoneyBar1.png
-  - bundle: assets/xasset/demo/ui/7scence1.unity3d
+  - bundle: feb49e8407fc56d9ad9549fea42c4713.unity3d
     path: Assets/XAsset/Demo/UI/7Scence1/bg_MoneyBar2.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Btn_Add_h.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Btn_Add_n.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Btn_Add_p.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Btn_Prop_h.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Btn_Prop_n.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Btn_Prop_p.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/DialogWindow1.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/DialogWindow2.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_AddProp.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Attack.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Attack1.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Jump.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Jump1.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Prop1.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Prop2.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Prop3.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Prop4.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Prop5.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Prop6.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Role.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Icon_Task.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Progress-bar_Energy.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Progress-bar_life.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Slider1.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Slider1_Btn.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/Slider1_bg.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/bg_EnergyProgress bar.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/bg_Item.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/bg_ItemIntrudction.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/bg_LifeProgress bar.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/bg_Popup1.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/bg_Popup1Title.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/bg_RoleDown.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/bg_RoleUp.png
-  - bundle: assets/xasset/demo/ui/8scence2.unity3d
+  - bundle: 54af4ce5056f6473fa1538f178eff62e.unity3d
     path: Assets/XAsset/Demo/UI/8Scence2/bg_Title.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Back1_h.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Back1_n.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Back1_p.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Back_h.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Back_n.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Back_p.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Buy_h.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Buy_n.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Buy_p.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Home_h .png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Home_n.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Home_p .png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Next_h.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Next_n.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Next_p.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Previous_h.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Previous_n.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Previous_p.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Title_h.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Title_n.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Btn_Title_p.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Icon_Back.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Icon_Gun.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Icon_LargeLocked.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Icon_Money.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Icon_OrangeDiamond.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Icon_Silver.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Icon_Trigonometry.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Parting line.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Radio_null.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Radio_select.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/Title spacer.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/bg_Black Mask2.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/bg_Good.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/bg_GoodsTitle.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/bg_SHOP.png
-  - bundle: assets/xasset/demo/ui/9store.unity3d
+  - bundle: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     path: Assets/XAsset/Demo/UI/9Store/bg_Title.png
-  - bundle: assets/xasset/demo/ui/backgrounds.unity3d
+  - bundle: 48ffeb663a9f3e4c9ab69463a6a0a998.unity3d
     path: Assets/XAsset/Demo/UI/Backgrounds/background1_v2.png
-  - bundle: assets/xasset/demo/ui/backgrounds.unity3d
+  - bundle: 48ffeb663a9f3e4c9ab69463a6a0a998.unity3d
     path: Assets/XAsset/Demo/UI/Backgrounds/background2_v2.png
-  - bundle: assets/xasset/demo/ui/backgrounds.unity3d
+  - bundle: 48ffeb663a9f3e4c9ab69463a6a0a998.unity3d
     path: Assets/XAsset/Demo/UI/Backgrounds/background3_v2.png
-  - bundle: assets/xasset/demo/ui/backgrounds.unity3d
+  - bundle: 48ffeb663a9f3e4c9ab69463a6a0a998.unity3d
     path: Assets/XAsset/Demo/UI/Backgrounds/background4_v2.png
-  - bundle: assets/xasset/demo/ui/backgrounds.unity3d
+  - bundle: 48ffeb663a9f3e4c9ab69463a6a0a998.unity3d
     path: Assets/XAsset/Demo/UI/Backgrounds/background5_v2.png
-  - bundle: assets/xasset/demo/ui/backgrounds.unity3d
+  - bundle: 48ffeb663a9f3e4c9ab69463a6a0a998.unity3d
     path: Assets/XAsset/Demo/UI/Backgrounds/background6_v2.png
-  - bundle: assets/xasset/demo/ui/components1.unity3d
+  - bundle: debbc47b5b3a2f87edfd10b1b3e339a1.unity3d
     path: Assets/XAsset/Demo/UI/Components1/bg_LoadingPage.png
-  - bundle: assets/xasset/demo/ui/components1.unity3d
+  - bundle: debbc47b5b3a2f87edfd10b1b3e339a1.unity3d
     path: Assets/XAsset/Demo/UI/Components1/line01.png
-  - bundle: assets/xasset/demo/ui/components1.unity3d
+  - bundle: debbc47b5b3a2f87edfd10b1b3e339a1.unity3d
     path: Assets/XAsset/Demo/UI/Components1/line02.png
-  - bundle: assets/xasset/demo/ui/components2.unity3d
+  - bundle: 15699ef11fb8a0e612311411fdb207c7.unity3d
     path: Assets/XAsset/Demo/UI/Components2/Btn_Login_h.png
-  - bundle: assets/xasset/demo/ui/components2.unity3d
+  - bundle: 15699ef11fb8a0e612311411fdb207c7.unity3d
     path: Assets/XAsset/Demo/UI/Components2/Btn_Login_n.png
-  - bundle: assets/xasset/demo/ui/components2.unity3d
+  - bundle: 15699ef11fb8a0e612311411fdb207c7.unity3d
     path: Assets/XAsset/Demo/UI/Components2/Btn_Login_p.png
-  - bundle: assets/xasset/demo/ui/components2.unity3d
+  - bundle: 15699ef11fb8a0e612311411fdb207c7.unity3d
     path: Assets/XAsset/Demo/UI/Components2/Input_h.png
-  - bundle: assets/xasset/demo/ui/components2.unity3d
+  - bundle: 15699ef11fb8a0e612311411fdb207c7.unity3d
     path: Assets/XAsset/Demo/UI/Components2/bg_Input_n.png
-  - bundle: assets/xasset/demo/ui/components2.unity3d
+  - bundle: 15699ef11fb8a0e612311411fdb207c7.unity3d
     path: Assets/XAsset/Demo/UI/Components2/bg_Input_s.png
-  - bundle: assets/xasset/demo/ui/components2.unity3d
+  - bundle: 15699ef11fb8a0e612311411fdb207c7.unity3d
     path: Assets/XAsset/Demo/UI/Components2/bg_Login.png
-  - bundle: assets/xasset/demo/ui/components2.unity3d
+  - bundle: 15699ef11fb8a0e612311411fdb207c7.unity3d
     path: Assets/XAsset/Demo/UI/Components2/login bg.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_Cancle_h.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_Cancle_n.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_Cancle_p.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_OK_P.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_OK_h.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_OK_n.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_Resume_h.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_Resume_n.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_Resume_p.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_number_h.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_number_n.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Btn_number_p.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Icon_Quit.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Icon_Restart.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Icon_Resume.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Icon_Target.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Icon_TargetGreen.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/Icon_TargetYellow.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/background.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/bg_LargeTitle1.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/bg_Time.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/bg_Title_Window1.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/bg_Title_Window2.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/bg_Title_Window3.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/bg_Window1.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/bg_Window2.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/bg_Window3.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/bg_block.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/bg_map.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/close_hover.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/close_normal.png
-  - bundle: assets/xasset/demo/ui/components3.unity3d
+  - bundle: 037294d567b2c9de638cdf1810dcb52c.unity3d
     path: Assets/XAsset/Demo/UI/Components3/close_pressed.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_Previous_h.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_Previous_n.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_Previous_p.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_Start_h.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_Start_n.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_Start_p.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi button01_h.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi button01_n.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi button01_p.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi button02_P.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi button02_h.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi button02_n.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi button03_h.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi button03_n.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi button03_p.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi-button04_P.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi-button04_h.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Btn_sci-fi-button04_n.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Icon_Earth_n.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Icon_Next.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Icon_Pause.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Icon_Plaly.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Icon_Previous.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Icon_Setting.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Icon_Stop.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/Icoon_Person.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/bg_Title_textbox01.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/bg_loading-bar01.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/checkbox_hover.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/checkbox_normal.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/checkbox_select.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/circle01-1.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/circle01-2.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/circle01.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/loading bar02.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/loading-bar01.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/loading-bar02_01.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/loading-bar02_02.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/radio_hover.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/radio_normal.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/radio_selected.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/switch01-off.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/switch01-on.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/switch02-off.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/switch02-on.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/textbox01.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/textbox02.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/textbox03.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/textbox04.png
-  - bundle: assets/xasset/demo/ui/components4.unity3d
+  - bundle: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     path: Assets/XAsset/Demo/UI/Components4/textbox05.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_Button5-1_n.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_Button5-2_h.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_Button5-2_p.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_Button5-3_yellow.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button01_h.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button01_n.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button01_p.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button01_yellow.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button02_Yellow.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button02_h.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button02_n.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button02_p.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button03_Yellow.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button03_h.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button03_n.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button03_p.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button04_Yellow.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button04_h.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button04_n.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Btn_button04_p.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Icon00.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Icon3-1.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Icon3-2.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Icon4-1.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Icon4-2.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Sci-fi-Circle01_01.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Sci-fi-Circle01_02.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Sci-fi-Circle01_03.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Sci-fi-Circle01_04.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Sci-fi-Circle02_01.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Sci-fi-Circle02_02.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Sci-fi-Circle02_03.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/SmallTitle1-1.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/SmallTitle2-1.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/Tips.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/bg_LargeTitle2.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/bg_Title_small panel03.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/small panel01.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/small panel02.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/small panel03.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/small panel04.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/small panel05.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/small title01_bg.png
-  - bundle: assets/xasset/demo/ui/components5.unity3d
+  - bundle: c2371608a59f360ef93799b190c943f5.unity3d
     path: Assets/XAsset/Demo/UI/Components5/small title02_bg.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/Btn_LargeClose_h.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/Btn_LargeClose_n.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/Btn_LargeClose_p.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/Btn_MiddleClose_h.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/Btn_MiddleClose_n.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/Btn_MiddleClose_p.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/Large panel01.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/Large panel02.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/Large panel03.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/Large panel04.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/bg_Title_LargePanel01.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/bg_Title_LargePanel02.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/bg_Title_LargePanel03.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/bg_Title_middlePanel01.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/bg_Title_middlePanel02.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/bg_Title_middlePanel03.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/middle panel01.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/middle panel02.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/middle panel03.png
-  - bundle: assets/xasset/demo/ui/components6.unity3d
+  - bundle: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     path: Assets/XAsset/Demo/UI/Components6/middle panel04.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/bg_Title_small panel03_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/bg_Title_textbox01_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/middle panel01_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/middle panel02_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/middle panel03_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/middle panel04_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/small panel01_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/small panel02_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/small panel03_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/small panel04 _Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/small panel05_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/textbox01_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/textbox02_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/textbox03_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/textbox04_Opaque.png
-  - bundle: assets/xasset/demo/ui/components7.unity3d
+  - bundle: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     path: Assets/XAsset/Demo/UI/Components7/textbox05_Opaque.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/0.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/1.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/2.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/3.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/4.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/5.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/6.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/7.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/8.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/9.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Btn1_c.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Btn1_h.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Btn1_n.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Btn_Next_c .png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Btn_Next_h.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Btn_Next_n.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Btn_Previous_c.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Btn_Previous_h.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Btn_Previous_n.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Circle.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Icon_Complete1.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Icon_Defeat1.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Icon_GameOver2.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Icon_Go1.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Icon_Level up1.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Icon_Start1.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Icon_Victory1.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Icon_You lose2.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Icon_YouWin1.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Icon_pause.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Line0.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Point_Color2.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Point_Green.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Point_Red.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Point_Yellow.png
-  - bundle: assets/xasset/demo/ui/components8.unity3d
+  - bundle: bce96525d50821efa962a1762e6ad327.unity3d
     path: Assets/XAsset/Demo/UI/Components8/Prop.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Attack0_n.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Attack0_p.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Attack1_n.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Attack1_p.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Back_h.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Back_n.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Back_p.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Previouspage_gray.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Previouspage_h.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Previouspage_n.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Previouspage_p.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Right_h .png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Right_n.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_Right_p .png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_down_h.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_down_n .png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_down_p.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_exit_h.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_exit_n.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_exit_p.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_left_h.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_left_n .png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_left_p.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_nextpage_gray.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_nextpage_h.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_nextpage_n.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_nextpage_p.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_tool_h.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_tool_n.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_tool_p.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_up_h.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_up_n.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Btn_up_p.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Hp_Blue.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Hp_Green.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Hp_Green_bg.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Hp_Red.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Hp_Yellow.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Hp_Yellow_bg.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Attack0.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Exit.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Front sight1.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Front sight2.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Front sight3.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Front sight4.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Front sight5.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Front sight6.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Front sight7.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_GreenPoint.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Jump .png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Prostrate.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Range.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_RedPoint.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Run .png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_Spanner.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_YellowPoint.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_back.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Icon_target.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Progress2.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle1.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle1_Ball.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle2.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle2_01.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle2_02.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle2_03.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle3.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle3_bg.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle4.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle4_bg.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Circle5.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Line1.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Line1_bg.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Line2.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Line2_bg.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Line3.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Line3_bg.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Line4.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/ProgressBar_Line4_bg.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_a1.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_a2.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_a3.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_a4.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_b1.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_b2.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_b3.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_b4.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/bg_CircleMap.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/bg_Direction1.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/bg_Direction2.png
-  - bundle: assets/xasset/demo/ui/components9.unity3d
+  - bundle: a001220a1b2528fc4acaf85917f8882a.unity3d
     path: Assets/XAsset/Demo/UI/Components9/bg_toolbox.png
   ruleBundles:
-  - name: assets/xasset/demo/ui/10character.unity3d
+  - name: 4a668588d6510f5f0943d60252ce18cd.unity3d
     assets:
     - Assets/XAsset/Demo/UI/10Character/bg_CHARACTOR.png
     - Assets/XAsset/Demo/UI/10Character/bg_describtion.png
@@ -1394,14 +1395,14 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/10Character/Stage_bg01.png
     - Assets/XAsset/Demo/UI/10Character/Stage_bg02.png
     - Assets/XAsset/Demo/UI/10Character/Stage_bg03.png
-  - name: assets/xasset/demo/ui/11notenoughmoney.unity3d
+  - name: d76d7f89666b4f98f2723d5f3f9043a3.unity3d
     assets:
     - Assets/XAsset/Demo/UI/11NotEnoughMoney/bg_black.png
     - Assets/XAsset/Demo/UI/11NotEnoughMoney/bg_NotEnoughMoney.png
     - Assets/XAsset/Demo/UI/11NotEnoughMoney/Btn_Buy_h.png
     - Assets/XAsset/Demo/UI/11NotEnoughMoney/Btn_Buy_n.png
     - Assets/XAsset/Demo/UI/11NotEnoughMoney/Btn_Buy_p.png
-  - name: assets/xasset/demo/ui/12recharge.unity3d
+  - name: 72c31fb04179923b119e43dc7c11fee8.unity3d
     assets:
     - Assets/XAsset/Demo/UI/12Recharge/bg_BuyCoins.png
     - Assets/XAsset/Demo/UI/12Recharge/bg_BuyCoins2.png
@@ -1418,7 +1419,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/12Recharge/Icon_Sale.png
     - Assets/XAsset/Demo/UI/12Recharge/Radiated light1.png
     - Assets/XAsset/Demo/UI/12Recharge/Radiated light2.png
-  - name: assets/xasset/demo/ui/13ranking.unity3d
+  - name: 36b74253533cd801f2efc42fbd2e2959.unity3d
     assets:
     - Assets/XAsset/Demo/UI/13Ranking/1st.png
     - Assets/XAsset/Demo/UI/13Ranking/2st.png
@@ -1432,7 +1433,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/13Ranking/Icon_Role2.png
     - Assets/XAsset/Demo/UI/13Ranking/Icon_Role3.png
     - Assets/XAsset/Demo/UI/13Ranking/Icon_Role4.png
-  - name: assets/xasset/demo/ui/14pause.unity3d
+  - name: 583fac5bf806d2693f46e9cdf1fe6c35.unity3d
     assets:
     - Assets/XAsset/Demo/UI/14Pause/bg_black.png
     - Assets/XAsset/Demo/UI/14Pause/Btn_Continue0_h.png
@@ -1444,7 +1445,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/14Pause/PAUSE.png
     - Assets/XAsset/Demo/UI/14Pause/TitleLine_Left.png
     - Assets/XAsset/Demo/UI/14Pause/TitleLine_Right.png
-  - name: assets/xasset/demo/ui/15opotions.unity3d
+  - name: 373fd813028c5f2ac09cd01eb2fc9161.unity3d
     assets:
     - Assets/XAsset/Demo/UI/15Opotions/bg_black.png
     - Assets/XAsset/Demo/UI/15Opotions/bg_LeftTab.png
@@ -1480,7 +1481,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/15Opotions/switch02-off.png
     - Assets/XAsset/Demo/UI/15Opotions/switch02-on.png
     - Assets/XAsset/Demo/UI/15Opotions/Window_Settings.png
-  - name: assets/xasset/demo/ui/16victory1.unity3d
+  - name: 43037a82c34a66c3cfade923078202fa.unity3d
     assets:
     - Assets/XAsset/Demo/UI/16Victory1/bg_block.png
     - Assets/XAsset/Demo/UI/16Victory1/bg_ProgressLv.png
@@ -1505,11 +1506,11 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/16Victory1/Lights2.png
     - Assets/XAsset/Demo/UI/16Victory1/ProgressLv.png
     - Assets/XAsset/Demo/UI/16Victory1/title_Victory.png
-  - name: assets/xasset/demo/ui/17victory2.unity3d
+  - name: f06980f5b57ce4f072e223f58ddf3bff.unity3d
     assets:
     - Assets/XAsset/Demo/UI/17Victory2/bg_Victory.png
     - Assets/XAsset/Demo/UI/17Victory2/VICTORY.png
-  - name: assets/xasset/demo/ui/18warning.unity3d
+  - name: f7a9e454952200090e54c3c1aa63eabd.unity3d
     assets:
     - Assets/XAsset/Demo/UI/18Warning/bg_Warning.png
     - Assets/XAsset/Demo/UI/18Warning/bg_WarningTitle.png
@@ -1517,20 +1518,20 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/18Warning/Btn_RedOk_h.png
     - Assets/XAsset/Demo/UI/18Warning/Btn_RedOk_n.png
     - Assets/XAsset/Demo/UI/18Warning/Btn_RedOk_p.png
-  - name: assets/xasset/demo/ui/19died.unity3d
+  - name: f1b506cf4bdcb530ccc230de9996dfbc.unity3d
     assets:
     - Assets/XAsset/Demo/UI/19Died/Icon_Died.png
-  - name: assets/xasset/demo/ui/1loadingpage.unity3d
+  - name: fdf89e8c87f40d9d2d85581df966f861.unity3d
     assets:
     - Assets/XAsset/Demo/UI/1LoadingPage/bg_Progress.png
     - Assets/XAsset/Demo/UI/1LoadingPage/Progress1.png
     - Assets/XAsset/Demo/UI/1LoadingPage/Progress2.png
     - Assets/XAsset/Demo/UI/1LoadingPage/Title2_bg.png
-  - name: assets/xasset/demo/ui/20gameover.unity3d
+  - name: c4f8a957bb7d46fa53f3f9e4c65d37ab.unity3d
     assets:
     - Assets/XAsset/Demo/UI/20GameOver/GAME OVER.png
     - Assets/XAsset/Demo/UI/20GameOver/GameOver.png
-  - name: assets/xasset/demo/ui/2mainmenu.unity3d
+  - name: d5d7dfbb272e3bd0a3ab935564a7f4ad.unity3d
     assets:
     - Assets/XAsset/Demo/UI/2MainMenu/bg_Title.png
     - Assets/XAsset/Demo/UI/2MainMenu/bg_Title1.png
@@ -1555,7 +1556,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/2MainMenu/Sci-fi-Circle_Large2.png
     - Assets/XAsset/Demo/UI/2MainMenu/Sci-fi-Circle_Large3.png
     - Assets/XAsset/Demo/UI/2MainMenu/Sci-fi-Circle_Large4.png
-  - name: assets/xasset/demo/ui/3stageselect.unity3d
+  - name: ff93a0d56b6c33f1033d64ecf8c13777.unity3d
     assets:
     - Assets/XAsset/Demo/UI/3StageSelect/Battlefield 2.png
     - Assets/XAsset/Demo/UI/3StageSelect/bg_Name1.png
@@ -1571,7 +1572,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/3StageSelect/Btn_Previous_p.png
     - Assets/XAsset/Demo/UI/3StageSelect/Radio1_null.png
     - Assets/XAsset/Demo/UI/3StageSelect/Radio1_select.png
-  - name: assets/xasset/demo/ui/4levels.unity3d
+  - name: 8bb7326338246b283383d10d46e62f7f.unity3d
     assets:
     - Assets/XAsset/Demo/UI/4Levels/bg_EnergyProgress bar.png
     - Assets/XAsset/Demo/UI/4Levels/bg_LifeProgress bar.png
@@ -1601,7 +1602,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/4Levels/Level star_Light.png
     - Assets/XAsset/Demo/UI/4Levels/Progress-bar_Energy.png
     - Assets/XAsset/Demo/UI/4Levels/Progress-bar_life.png
-  - name: assets/xasset/demo/ui/5login1.unity3d
+  - name: 4899e71d32d6a21f4870e84d905dd6f1.unity3d
     assets:
     - Assets/XAsset/Demo/UI/5Login1/bg_black.png
     - Assets/XAsset/Demo/UI/5Login1/bg_Input0_n.png
@@ -1624,7 +1625,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/5Login1/Icon_UserName1.png
     - Assets/XAsset/Demo/UI/5Login1/line.png
     - Assets/XAsset/Demo/UI/5Login1/Window_Login.png
-  - name: assets/xasset/demo/ui/7scence1.unity3d
+  - name: feb49e8407fc56d9ad9549fea42c4713.unity3d
     assets:
     - Assets/XAsset/Demo/UI/7Scence1/bg_Direction1.png
     - Assets/XAsset/Demo/UI/7Scence1/bg_Direction2.png
@@ -1679,7 +1680,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/7Scence1/TargetGreen.png
     - Assets/XAsset/Demo/UI/7Scence1/TargetRed.png
     - Assets/XAsset/Demo/UI/7Scence1/Tips.png
-  - name: assets/xasset/demo/ui/8scence2.unity3d
+  - name: 54af4ce5056f6473fa1538f178eff62e.unity3d
     assets:
     - Assets/XAsset/Demo/UI/8Scence2/bg_EnergyProgress bar.png
     - Assets/XAsset/Demo/UI/8Scence2/bg_Item.png
@@ -1716,7 +1717,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/8Scence2/Slider1.png
     - Assets/XAsset/Demo/UI/8Scence2/Slider1_bg.png
     - Assets/XAsset/Demo/UI/8Scence2/Slider1_Btn.png
-  - name: assets/xasset/demo/ui/9store.unity3d
+  - name: 6629e0a557bc27aa5a542ec76d9abd42.unity3d
     assets:
     - Assets/XAsset/Demo/UI/9Store/bg_Black Mask2.png
     - Assets/XAsset/Demo/UI/9Store/bg_Good.png
@@ -1755,7 +1756,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/9Store/Radio_null.png
     - Assets/XAsset/Demo/UI/9Store/Radio_select.png
     - Assets/XAsset/Demo/UI/9Store/Title spacer.png
-  - name: assets/xasset/demo/ui/backgrounds.unity3d
+  - name: 48ffeb663a9f3e4c9ab69463a6a0a998.unity3d
     assets:
     - Assets/XAsset/Demo/UI/Backgrounds/background1_v2.png
     - Assets/XAsset/Demo/UI/Backgrounds/background2_v2.png
@@ -1763,12 +1764,12 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/Backgrounds/background4_v2.png
     - Assets/XAsset/Demo/UI/Backgrounds/background5_v2.png
     - Assets/XAsset/Demo/UI/Backgrounds/background6_v2.png
-  - name: assets/xasset/demo/ui/components1.unity3d
+  - name: debbc47b5b3a2f87edfd10b1b3e339a1.unity3d
     assets:
     - Assets/XAsset/Demo/UI/Components1/bg_LoadingPage.png
     - Assets/XAsset/Demo/UI/Components1/line01.png
     - Assets/XAsset/Demo/UI/Components1/line02.png
-  - name: assets/xasset/demo/ui/components2.unity3d
+  - name: 15699ef11fb8a0e612311411fdb207c7.unity3d
     assets:
     - Assets/XAsset/Demo/UI/Components2/bg_Input_n.png
     - Assets/XAsset/Demo/UI/Components2/bg_Input_s.png
@@ -1778,7 +1779,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/Components2/Btn_Login_p.png
     - Assets/XAsset/Demo/UI/Components2/Input_h.png
     - Assets/XAsset/Demo/UI/Components2/login bg.png
-  - name: assets/xasset/demo/ui/components3.unity3d
+  - name: 037294d567b2c9de638cdf1810dcb52c.unity3d
     assets:
     - Assets/XAsset/Demo/UI/Components3/background.png
     - Assets/XAsset/Demo/UI/Components3/bg_block.png
@@ -1812,7 +1813,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/Components3/Icon_Target.png
     - Assets/XAsset/Demo/UI/Components3/Icon_TargetGreen.png
     - Assets/XAsset/Demo/UI/Components3/Icon_TargetYellow.png
-  - name: assets/xasset/demo/ui/components4.unity3d
+  - name: 9de4016e20e0b8ff8fe69566043f40f2.unity3d
     assets:
     - Assets/XAsset/Demo/UI/Components4/bg_loading-bar01.png
     - Assets/XAsset/Demo/UI/Components4/bg_Title_textbox01.png
@@ -1864,7 +1865,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/Components4/textbox03.png
     - Assets/XAsset/Demo/UI/Components4/textbox04.png
     - Assets/XAsset/Demo/UI/Components4/textbox05.png
-  - name: assets/xasset/demo/ui/components5.unity3d
+  - name: c2371608a59f360ef93799b190c943f5.unity3d
     assets:
     - Assets/XAsset/Demo/UI/Components5/bg_LargeTitle2.png
     - Assets/XAsset/Demo/UI/Components5/bg_Title_small panel03.png
@@ -1910,7 +1911,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/Components5/SmallTitle1-1.png
     - Assets/XAsset/Demo/UI/Components5/SmallTitle2-1.png
     - Assets/XAsset/Demo/UI/Components5/Tips.png
-  - name: assets/xasset/demo/ui/components6.unity3d
+  - name: 8e8653de1292a9c6d7f13d5296abc944.unity3d
     assets:
     - Assets/XAsset/Demo/UI/Components6/bg_Title_LargePanel01.png
     - Assets/XAsset/Demo/UI/Components6/bg_Title_LargePanel02.png
@@ -1932,7 +1933,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/Components6/middle panel02.png
     - Assets/XAsset/Demo/UI/Components6/middle panel03.png
     - Assets/XAsset/Demo/UI/Components6/middle panel04.png
-  - name: assets/xasset/demo/ui/components7.unity3d
+  - name: fb1be8ab9a7ed17c3f123f42065a5a6c.unity3d
     assets:
     - Assets/XAsset/Demo/UI/Components7/bg_Title_small panel03_Opaque.png
     - Assets/XAsset/Demo/UI/Components7/bg_Title_textbox01_Opaque.png
@@ -1950,7 +1951,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/Components7/textbox03_Opaque.png
     - Assets/XAsset/Demo/UI/Components7/textbox04_Opaque.png
     - Assets/XAsset/Demo/UI/Components7/textbox05_Opaque.png
-  - name: assets/xasset/demo/ui/components8.unity3d
+  - name: bce96525d50821efa962a1762e6ad327.unity3d
     assets:
     - Assets/XAsset/Demo/UI/Components8/0.png
     - Assets/XAsset/Demo/UI/Components8/1.png
@@ -1988,7 +1989,7 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/Components8/Point_Red.png
     - Assets/XAsset/Demo/UI/Components8/Point_Yellow.png
     - Assets/XAsset/Demo/UI/Components8/Prop.png
-  - name: assets/xasset/demo/ui/components9.unity3d
+  - name: a001220a1b2528fc4acaf85917f8882a.unity3d
     assets:
     - Assets/XAsset/Demo/UI/Components9/bg_CircleMap.png
     - Assets/XAsset/Demo/UI/Components9/bg_Direction1.png
@@ -2080,6 +2081,6 @@ MonoBehaviour:
     - Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_b2.png
     - Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_b3.png
     - Assets/XAsset/Demo/UI/Components9/Sci-fi-Mouse-cursor_b4.png
-  - name: assets/xasset/demo/scenes/game.unity.unity3d
+  - name: b26a9bac179b4418b47a45737a4c6673.unity3d
     assets:
     - Assets/XAsset/Demo/Scenes/Game.unity
