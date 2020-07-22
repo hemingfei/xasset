@@ -419,7 +419,7 @@ namespace libx
     public class SceneAssetAsyncRequest : SceneAssetRequest
     {
         private AsyncOperation _request;
-
+        public AsyncOperation AsyncOperation { get { return _request; } }
         public SceneAssetAsyncRequest(string path, bool addictive)
             : base(path, addictive)
         {

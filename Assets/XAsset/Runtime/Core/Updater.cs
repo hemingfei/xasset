@@ -62,6 +62,15 @@ namespace libx
 
         private Step _step;
 
+        #region hmf edit
+        public const string ResSubFolderName = "DLC/";
+        public const string BaseURL_EDITOR = "http://127.0.0.1:7888/DLC/";
+        public static string GetSavePath4Res(string resName = "")
+        {
+            return string.Format("{0}/DLC/", Application.persistentDataPath) + resName;
+        }
+        #endregion
+
         [SerializeField] private string baseURL = "http://127.0.0.1:7888/DLC/";
         [SerializeField] private string gameScene = "Game.unity";
         [SerializeField] private bool enableVFS = true;
@@ -308,7 +317,7 @@ namespace libx
             enableVFS = mb.isOk;
         }
 
-        private static string GetPlatformForAssetBundles(RuntimePlatform target)
+        public static string GetPlatformForAssetBundles(RuntimePlatform target)
         {
             // ReSharper disable once SwitchStatementMissingSomeCases
             switch (target)
