@@ -353,7 +353,10 @@ namespace libx
 
             if (_step == Step.Wait)
             {
-                yield return RequestVFS();
+                //yield return RequestVFS();
+
+                // 是否启用 VFS
+                enableVFS = true;
                 _step = Step.Copy;
             }
 
