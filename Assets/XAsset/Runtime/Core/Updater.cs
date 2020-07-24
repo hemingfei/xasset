@@ -24,6 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using Hegametech.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -48,7 +49,8 @@ namespace libx
 
     [RequireComponent(typeof(Downloader))]
     [RequireComponent(typeof(NetworkMonitor))]
-    public class Updater : MonoBehaviour, IUpdater, INetworkMonitorListener
+    [MonoSingletonAttribute("[HE GAME TECH]/Updater")]
+    public class Updater : TMonoSingleton<Updater>, IUpdater, INetworkMonitorListener
     {
         enum Step
         {
@@ -68,6 +70,17 @@ namespace libx
         public static string GetSavePath4Res(string resName = "")
         {
             return string.Format("{0}/DLC/", Application.persistentDataPath) + resName;
+        }
+
+        public void ResInitError(string error)
+        {
+            StartCoroutine(ErrorMsg(error));
+        }
+        private IEnumerator ErrorMsg(string error)
+        {
+            var mb = MessageBox.Show("提示", "初始化异常错误：" + error + "请联系技术支持");
+            yield return mb;
+            Quit();
         }
         #endregion
 
@@ -265,7 +278,8 @@ namespace libx
             if (development)
             {
                 Assets.runtimeMode = false;
-                StartCoroutine(LoadGameScene());
+                //StartCoroutine(LoadGameScene());
+                FrameworkBoot.Event.Fire(StartBootResSystemEventArgs.EventId, StartBootResSystemEventArgs.Create(1));
                 return;
             }
 #endif
@@ -348,6 +362,7 @@ namespace libx
         {
             if (!Directory.Exists(_savePath))
             {
+                Log.Error(_savePath);
                 Directory.CreateDirectory(_savePath);
             }
 
@@ -589,7 +604,8 @@ namespace libx
                 OnVersion(version.ToString());
             }
 
-            StartCoroutine(LoadGameScene());
+            FrameworkBoot.Event.Fire(StartBootResSystemEventArgs.EventId, StartBootResSystemEventArgs.Create(1));
+            //StartCoroutine(LoadGameScene());
         }
 
         private IEnumerator LoadGameScene()
