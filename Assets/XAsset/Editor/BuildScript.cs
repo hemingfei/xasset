@@ -62,7 +62,7 @@ namespace libx
 
         internal static BuildRules GetBuildRules()
         {
-            return GetAsset<BuildRules>("Assets/Rules.asset");
+            return GetAsset<BuildRules>("Assets/Res/Rules.asset");
         }
 
         public static void CopyAssetBundlesTo(string path)
