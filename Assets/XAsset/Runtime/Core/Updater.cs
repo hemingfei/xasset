@@ -24,6 +24,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using Hegametech.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -48,7 +49,8 @@ namespace libx
 
     [RequireComponent(typeof(Downloader))]
     [RequireComponent(typeof(NetworkMonitor))]
-    public class Updater : MonoBehaviour, IUpdater, INetworkMonitorListener
+    [MonoSingletonAttribute("[HE GAME TECH]/Updater")]
+    public class Updater : TMonoSingleton<Updater>, IUpdater, INetworkMonitorListener
     {
         enum Step
         {
@@ -62,7 +64,16 @@ namespace libx
 
         [SerializeField] private string baseURL = "http://127.0.0.1:7888/DLC/";
         [SerializeField] private string gameScene = "Game.unity";
-        [SerializeField] private bool development;
+        [SerializeField] private bool development = false;
+
+        #region hmf edit
+        public const string ResSubFolderName = "DLC/";
+        public const string BaseURL_EDITOR = "http://127.0.0.1:7888/DLC/";
+        public static string GetSavePath4Res(string resName = "")
+        {
+            return string.Format("{0}/DLC/", Application.persistentDataPath) + resName;
+        }
+        #endregion
 
         public IUpdater listener { get; set; }
 
@@ -70,7 +81,20 @@ namespace libx
         private NetworkMonitor _monitor;
         private string _platform;
         private string _savePath;
-        
+
+        public void ResInitError(string error)
+        {
+            StartCoroutine(ErrorMsg(error));
+        }
+
+        private IEnumerator ErrorMsg(string error)
+        {
+            var mb = MessageBox.Show("提示", "初始化异常错误：" + error + "请联系技术支持");
+            yield return mb;
+            Quit();
+        }
+
+
         public void OnMessage(string msg)
         {
             if (listener != null)
@@ -246,7 +270,8 @@ namespace libx
             if (development)
             {
                 Assets.runtimeMode = false;
-                StartCoroutine(LoadGameScene());
+                //StartCoroutine(LoadGameScene());
+                FrameworkBoot.Event.Fire(StartBootResSystemEventArgs.EventId, StartBootResSystemEventArgs.Create(1));
                 return;
             }
 #endif
@@ -338,7 +363,7 @@ namespace libx
             }
         }
 
-        private static string GetPlatformForAssetBundles(RuntimePlatform target)
+        public static string GetPlatformForAssetBundles(RuntimePlatform target)
         {
             // ReSharper disable once SwitchStatementMissingSomeCases
             switch (target)
@@ -409,7 +434,8 @@ namespace libx
             OnProgress(1);
             OnMessage("更新完成");
             OnVersion(Versions.LoadVersion(_savePath + Versions.Filename).ToString());
-            StartCoroutine(LoadGameScene());
+            //StartCoroutine(LoadGameScene());
+            FrameworkBoot.Event.Fire(StartBootResSystemEventArgs.EventId, StartBootResSystemEventArgs.Create(1));
         }
 
         private IEnumerator LoadGameScene()

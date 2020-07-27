@@ -125,25 +125,25 @@ namespace libx
         #endregion
 
         #region hmf 标记
-        //public static void MarkAssetsWithFile()
-        //{
-        //    ApplyRuleAsset();
-        //}
+        public static void MarkAssetsWithFile()
+        {
+            GroupByFilename();
+        }
 
-        //public static void MarkAssetsWithDir()
-        //{
-        //    ApplyRuleDir();
-        //}
+        public static void MarkAssetsWithDir()
+        {
+            GroupByDirectory();
+        }
 
-        //public static void BuildRules()
-        //{
-        //    ApplyBuildRules();
-        //}
+        public static void ApplyBuildRules()
+        {
+            BuildRules();
+        }
 
-        //public static void BuildAB()
-        //{
-        //    BuildAssetBundles();
-        //}
+        public static void ApplyBuildAB()
+        {
+            BuildBundles();
+        }
         #endregion
 
         [MenuItem("XASSET/Build Rules")]
