@@ -47,7 +47,7 @@ namespace libx
     public class AssetBuild
     {
         public string path;
-        public PatchId patch;
+        public PatchBy patch;
         public string bundle;
         public GroupBy groupBy = GroupBy.Filename;
     }
@@ -90,12 +90,8 @@ namespace libx
         #region API
 
         public void GroupAsset(string path, GroupBy groupBy = GroupBy.Filename)
-        {
-            bool Match(AssetBuild bundleAsset)
-            {
-                return bundleAsset.path.Equals(path);
-            } 
-            var asset = ArrayUtility.Find(assets, Match);
+        { 
+            var asset = ArrayUtility.Find(assets, build => build.path.Equals(path));
             if (asset != null)
             {
                 asset.groupBy = groupBy; 
@@ -108,13 +104,9 @@ namespace libx
             }); 
         } 
         
-        public void PatchAsset(string path, PatchId patch)
-        {
-            bool Match(AssetBuild bundleAsset)
-            {
-                return bundleAsset.path.Equals(path);
-            } 
-            var asset = ArrayUtility.Find(assets, Match);
+        public void PatchAsset(string path, PatchBy patch)
+        { 
+            var asset = ArrayUtility.Find(assets, bundleAsset => bundleAsset.path.Equals(path));
             if (asset != null)
             {
                 asset.patch = patch; 
