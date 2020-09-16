@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/XAsset/Editor/JetBrains.meta
 guid: 3a8985ea48c01bb4fadc66ecdce744f6
+=======
+guid: be7a1943658320541b9a8736f95c01b4
+>>>>>>> upstream/master:Assets/Plugins/Editor/JetBrains.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
